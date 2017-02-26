@@ -18,7 +18,9 @@
     <style>
         html,
         body {
-            height: 100%;
+            /*height: 100%;*/
+            body { margin:0; padding:0; }
+            #map { position:absolute; top:0; bottom:0; width:100%; }
         }
 
         .leaflet-container {
@@ -34,18 +36,12 @@
             <div class="row">
               <h2>Old Mobile: Historic maps, current context</h2>
                 <div class="col-md-8">
-                  <p>
-                    One of the US Library of Congress' best-kept secrets is their digital archive of thousands of high-quality scans of historic maps. Many of those were created by Union Army surveyors during the 1860s, during and after the US Civil War and Reconstruction.</p>
-                  <p>
-                    One of the last Civil War battles took place around Mobile Bay, Alabama during March and April 1865 immediately preceding General Lee's surrender at Appomattox, Virginia on April 9. Mobile had its share of attention from Yankee cartographers, and thanks to the LoC, the fruits of their labor as well other maps from the time of French and Spanish rule are still available for us to study.</p>
-                    <p>
                     <ul>
                         <li>Right-click to toggle historic view</li>
                         <li>Left-click and drag to pan</li>
                         <li>Zoom with the controls at top left or the mouse wheel</li>
                         <li>Tested on a desktop computer running Chrome browser. Feedback to AA.</li>
                     </ul>
-                  </p>
                 </div>
 
                 <!-- Also look at bootstrap's "modals" for flyout boxes that would be good for map info and metadata -->
@@ -130,6 +126,15 @@
                     };
                 });
             </script>
+            <div class="row">
+                <br>
+                <p>
+                  One of the US Library of Congress' best-kept secrets is their digital archive of thousands of high-quality scans of historic maps. Many of those were created by Union Army surveyors during the 1860s, during and after the US Civil War and Reconstruction.
+                </p>
+                <p>
+                  One of the last Civil War battles took place around Mobile Bay, Alabama during March and April 1865 immediately preceding General Lee's surrender at Appomattox, Virginia on April 9. Mobile had its share of attention from Yankee cartographers, and thanks to the LoC, the fruits of their labor as well other maps from the time of French and Spanish rule are still available for us to study.
+                </p>
+            </div>
         </div>
     </div>
 
