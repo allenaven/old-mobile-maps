@@ -12,10 +12,6 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <link rel="stylesheet" href="./leaflet.magnifyingglass.css" />
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="./leaflet.magnifyingglass.js"></script>
 
@@ -54,15 +50,15 @@
 
                 <!-- Also look at bootstrap's "modals" for flyout boxes that would be good for map info and metadata -->
                 <div class="col-md-4">
-                    <div class="btn-group-vertical" id="mapSelect" role="group" data-toggle="buttons" style="float: right">
+                    <div class="btn-group-vertical" role="group" data-toggle="buttons">
                         <label class="btn btn-outline-primary active">
-                          <input type="radio" name="options" value="option1" autocomplete="off" checked>1838, downtown Mobile
+                          <input type="radio" name="options" id="option1" autocomplete="off" checked>1838, downtown Mobile
                         </label>
                         <label class="btn btn-outline-primary">
-                          <input type="radio" name="options" value="option2" autocomplete="off">1890 map
+                          <input type="radio" name="options" id="option2" autocomplete="off">1890 map
                         </label>
                         <label class="btn btn-outline-primary">
-                          <input type="radio" name="options" value="option3" autocomplete="off">1930s map
+                          <input type="radio" name="options" id="option3" autocomplete="off">1930s map
                         </label>
 
                     </div>
@@ -77,11 +73,6 @@
 
             <div id="map" style="height: 600px; width: 100%; background-color: #ccc;"> </div>
             <script>
-                $('#mapSelect').on('change', function () {
-                  var mapState = $('#mapSelect input:radio:checked').attr('value');
-                  alert(mapState);
-                });
-
                 var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
                     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
                     maxZoom: 16,
@@ -140,12 +131,11 @@
                 });
             </script>
         </div>
-
-        <div class='row'>
-
-        </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 </body>
 
