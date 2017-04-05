@@ -14,15 +14,23 @@
     <link rel="stylesheet" href="./static/leaflet.magnifyingglass.css" />
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="./static/leaflet.magnifyingglass.js"></script>
+    <script src="./al_historic.geojson" type="text/javascript"></script>
 
-    <style>
+    <style type="text/css">
         html,
         body {
-            /*height: 100%;*/
-            body { margin:0; padding:0; }
-            #map { position:absolute; top:0; bottom:0; width:100%; }
+            margin: 0;
+            padding: 0;
         }
-
+        
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+        }
+        
         .leaflet-container {
             background-color: rgba(255, 0, 0, 0.0);
         }
@@ -30,113 +38,90 @@
 </head>
 
 <body>
+    <div id="map"> </div>
+    <script>
+        // Call the basemap (free Stamen map) as a variable "base"
+        var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 16,
+            ext: 'png'
+        });
 
-    <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-              <h2>Old Mobile: Historic maps, current context</h2>
-                <div class="col-md-8">
-                    <ul>
-                        <li>Right-click to toggle historic view</li>
-                        <li>Left-click and drag to pan</li>
-                        <li>Zoom with the controls at top left or the mouse wheel</li>
-                        <li>Tested on a desktop computer running Chrome browser. Feedback to AA.</li>
-                    </ul>
-                </div>
-
-                <!-- Also look at bootstrap's "modals" for flyout boxes that would be good for map info and metadata -->
-                <div class="col-md-4">
-                    <div class="btn-group-vertical" role="group" data-toggle="buttons">
-                        <label class="btn btn-outline-primary active">
-                          <input type="radio" name="options" id="option1" autocomplete="off" checked>1838, downtown Mobile
-                        </label>
-                        <label class="btn btn-outline-primary">
-                          <input type="radio" name="options" id="option2" autocomplete="off">1890 map
-                        </label>
-                        <label class="btn btn-outline-primary">
-                          <input type="radio" name="options" id="option3" autocomplete="off">1930s map
-                        </label>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        // Call the National Registry of Historic Places points
+        // var alHistoricMarkerOptions = {
+        //     opacity: 0.8,
+        //     title: name
+        // };
+        var historicPlaces = L.geoJson(al_historic, {
+            pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {
+                        opacity: 0.8,
+                        title: feature.properties.name,
+                        riseOnHover: true
+                    })
+                    .bindPopup(feature.properties.name);
+            }
+        });
 
 
-    <div class="container">
-        <div class="row">
+        // Call the historic maps (hosted at Mapbox) as variables
+        var mobile1838 = L.tileLayer('https://api.mapbox.com/styles/v1/a9696/ciycmz2gp00852snpezs5am3r/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
+            minZoom: 10,
+            maxZoom: 16,
+            ext: 'png',
+            transparent: true
+        });
 
-            <div id="map" style="height: 600px; width: 100%; background-color: #ccc;"> </div>
-            <script>
-                var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
-                    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-                    maxZoom: 16,
-                    ext: 'png'
-                });
+        var center = [30.68, -88.05];
 
-                var mobile1838 = L.tileLayer('https://api.mapbox.com/styles/v1/a9696/ciycmz2gp00852snpezs5am3r/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
-                    minZoom: 10,
-                    maxZoom: 16,
-                    ext: 'png',
-                    transparent: true
-                });
+        var the_map = L.map('map', {
+            center: center,
+            zoom: 13,
+            layers: [base]
+        });
 
-                var center = [30.68, -88.05];
+        // Create a variable with the mutually exclusive historic layers
+        var historicLayers = {
+            "Mobile 1838": mobile1838
+        };
+        // And another layer with the overlay of the current map
+        var overlay = {
+            "Modern street map": base,
+            "National Reg. Hist. Places": historicPlaces
+        };
 
-                var the_map = L.map('map', {
-                    center: center,
-                    zoom: 13,
-                    layers: [base]
-                });
+        // Add layer control to map
+        L.control.layers(historicLayers, overlay).addTo(the_map);
 
-                var baseLayers = {
-                    "OpenStreetMap": base
-                };
-                var overlays = {
-                    "Mobile 1838": mobile1838,
-                };
+        // Add scalebar to map
+        L.control.scale().addTo(the_map);
 
-                // Add scalebar to map
-                L.control.scale().addTo(the_map);
+        // This allows the user to choose which layer shows up in the
+        //   magnifying glass. Tricking leaflet by switching baselayer
+        //   and overlay layers to keep the historic maps underneath.
+        // L.control.layers(null, overlays).addTo(the_map);
 
-                // This allows the user to choose which layer shows up in the
-                //   magnifying glass. Tricking leaflet by switching baselayer
-                //   and overlay layers to keep the historic maps underneath.
-                // L.control.layers(null, overlays).addTo(the_map);
+        // Create the magnifying glass
+        the_baselayer = mobile1838
+        var magnifyingGlass = L.magnifyingGlass({
+            zoomOffset: 0,
+            radius: 150,
+            layers: historicLayers // I changed this from the_baselayer
+        });
 
-                // Create the magnifying glass
-                the_baselayer = mobile1838
-                var magnifyingGlass = L.magnifyingGlass({
-                    zoomOffset: 0,
-                    radius: 150,
-                    layers: the_baselayer
-                });
+        // Add magnifying glass to map. Right click to toggle
+        the_map.addLayer(magnifyingGlass);
+        magnifyingGlass.setLatLng(center);
 
-                // Add magnifying glass to map. Right click to toggle
+        the_map.on('contextmenu', function(mouseEvt) {
+            if (the_map.hasLayer(magnifyingGlass)) {
+                the_map.removeLayer(magnifyingGlass);
+            } else {
                 the_map.addLayer(magnifyingGlass);
-                magnifyingGlass.setLatLng(center);
-
-                the_map.on('contextmenu', function(mouseEvt) {
-                    if (the_map.hasLayer(magnifyingGlass)) {
-                        the_map.removeLayer(magnifyingGlass);
-                    } else {
-                        the_map.addLayer(magnifyingGlass);
-                        magnifyingGlass.setLatLng(mouseEvt.latlng);
-                    };
-                });
-            </script>
-            <div class="row">
-                <br>
-                <p>
-                  One of the US Library of Congress' best-kept secrets is their digital archive of thousands of high-quality scans of historic maps. Many of those were created by Union Army surveyors during the 1860s, during and after the US Civil War and Reconstruction.
-                </p>
-                <p>
-                  One of the last Civil War battles took place around Mobile Bay, Alabama during March and April 1865 immediately preceding General Lee's surrender at Appomattox, Virginia on April 9. Mobile had its share of attention from Yankee cartographers, and thanks to the LoC, the fruits of their labor as well other maps from the time of French and Spanish rule are still available for us to study.
-                </p>
-            </div>
-        </div>
-    </div>
+                magnifyingGlass.setLatLng(mouseEvt.latlng);
+            };
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
