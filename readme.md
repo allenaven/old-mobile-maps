@@ -13,3 +13,14 @@
                     to the LoC, the fruits of their labor as well other maps from the time of French and Spanish rule are still available for us to study.
                 </p>
             </div>
+
+## Open-source sources
+
+1. [Leaflet.js](http://leafletjs.com/)
+1. [Leaflet.MagnifyingGlass](https://github.com/bbecquet/Leaflet.MagnifyingGlass)
+1. [EasyButton.js](http://danielmontague.com/projects/easyButton.js/)
+1. Font-awesome
+
+Other useful refs that I am not currently using in this project:
+
+1. [mapBBCode Leaflet plugins](http://mapbbcode.org/leaflet.html)
