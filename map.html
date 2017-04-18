@@ -46,18 +46,18 @@
 <body>
     <div id="map"> </div>
     <script>
-        // Call the basemap (free Stamen map) as a variable "base"
+        // Call the basemap (free Stamen map) as a variable "base". This layer
+        //   should be the very bottom layer, and should be able to be toggled
+        //   on and off.
         var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
             attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            maxZoom: 18,
+            maxZoom: 19,
             ext: 'png'
         });
 
-        // Call the National Registry of Historic Places points
-        // var alHistoricMarkerOptions = {
-        //     opacity: 0.8,
-        //     title: name
-        // };
+        // Call the National Registry of Historic Places points. This layer
+        //   should ride on top of all other layers and should be able to be
+        //   toggled on and off.
         var historicPlaces = L.geoJson(al_historic, {
             pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {
@@ -69,26 +69,28 @@
             }
         });
 
-
         // Call the historic maps (hosted at Mapbox) as variables
-        var mobile1838 = L.tileLayer('https://api.mapbox.com/styles/v1/a9696/ciycmz2gp00852snpezs5am3r/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
+        var mobile1838 = L.tileLayer('https://api.mapbox.com/v4/a9696.5syle2cu/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
             minZoom: 10,
-            maxZoom: 18,
-            ext: 'png',
-            transparent: true
+            maxZoom: 19
         });
 
+        // Define the point to instantiate the map
         var center = [30.68, -88.05];
 
+        // Instantiate the map
         var the_map = L.map('map', {
             center: center,
             zoom: 14,
             layers: [base]
         });
 
+        // Initial add layers to map
+        historicPlaces.addTo(the_map);
+
         // Create a variable with the mutually exclusive historic layers,
         //   formatted for the StyledLayerControl plugin
-        var historicLayers = [{
+        var historicMapList = [{
             groupName: "Historic Map Layers",
             expanded: true,
             layers: {
@@ -96,9 +98,10 @@
             }
         }];
 
-        // And another layer with the overlay of the current map
-        var overlays = [{
-            groupName: "Overlay Maps",
+        // Create a container for the modern-day map layers (street map and
+        //   historic place points) to pass to the layerControl
+        var baseMapList = [{
+            groupName: "Modern Maps",
             expanded: true,
             layers: {
                 "Modern street map": base,
@@ -106,7 +109,7 @@
             }
         }];
 
-        // Set the StyledLayerControl aesthetic options 
+        // Set the StyledLayerControl aesthetic options
         var layerControlOptions = {
             container_width: "180px",
             container_maxHeight: "550px",
@@ -116,46 +119,32 @@
         };
 
         // Add layer control to map
-        // This is the old one:
-        //   L.control.layers(historicLayers, overlay).addTo(the_map);
-        var layerControl = L.Control.styledLayerControl(historicLayers,
-            overlays, layerControlOptions);
+        var layerControl = L.Control.styledLayerControl(
+            historicMapList, baseMapList, layerControlOptions);
         the_map.addControl(layerControl);
 
         // Add scalebar to map
         L.control.scale().addTo(the_map);
 
-        // Add the "easy button" that eventually will control magnifying glass
+        // The "easy button" that toggles the magnifying glass
         L.easyButton('<span class="glass">&telrec;</span>', function() {
-            alert('button works')
+            if (the_map.hasLayer(magnifyingGlass)) {
+                the_map.removeLayer(magnifyingGlass);
+            } else {
+                magnifyingGlass.addTo(the_map);
+            }
         }).addTo(the_map);
 
-        // This allows the user to choose which layer shows up in the
-        //   magnifying glass. Tricking leaflet by switching baselayer
-        //   and overlay layers to keep the historic maps underneath.
-        // L.control.layers(null, overlays).addTo(the_map);
+        // Allows the user to choose which layer shows up in the
+        //   magnifying glass.
 
-        // Create the magnifying glass
-        // the_baselayer = mobile1838
+        // Create the magnifying glass layer
         var theMagnifiedLayer = mobile1838
         var magnifyingGlass = L.magnifyingGlass({
             zoomOffset: 0,
             radius: 150,
             layers: [theMagnifiedLayer]
-        }).addTo(the_map);
-
-        // // Add magnifying glass to map. Right click to toggle
-        // the_map.addLayer(magnifyingGlass);
-        // magnifyingGlass.setLatLng(center);
-
-        // the_map.on('contextmenu', function(mouseEvt) {
-        //     if (the_map.hasLayer(magnifyingGlass)) {
-        //         the_map.removeLayer(magnifyingGlass);
-        //     } else {
-        //         the_map.addLayer(magnifyingGlass);
-        //         magnifyingGlass.setLatLng(mouseEvt.latlng);
-        //     };
-        // });
+        })
     </script>
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
