@@ -14,13 +14,19 @@
     <link rel="stylesheet" href="./static/leaflet.magnifyingglass.css" />
     <link rel="stylesheet" href="./static/styledLayerControl.css" />
     <link rel="stylesheet" href="./static/easy-button.css" />
-    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css" rel="stylesheet" />
+    <link href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css" rel="stylesheet" />
 
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="./static/leaflet.magnifyingglass.js"></script>
     <script src="./static/styledLayerControl.js"></script>
     <script src="./static/easy-button.js"></script>
     <script src="./al_historic.geojson" type="text/javascript"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.0.4/dist/leaflet.markercluster-src.js"></script>
+
+    <link rel="stylesheet" href="./static/Control.FullScreen.css" />
+    <script src="./static/Control.FullScreen.js"></script>
 
     <style type="text/css">
         html,
@@ -33,8 +39,8 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            height: 100%;
-            width: 100%;
+            height: 600px;
+            width: 800px;
         }
         
         .leaflet-container {
@@ -49,11 +55,23 @@
         // Call the basemap (free Stamen map) as a variable "base". This layer
         //   should be the very bottom layer, and should be able to be toggled
         //   on and off.
-        var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            maxZoom: 19,
-            ext: 'png'
+
+        // var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
+        //     //var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
+        //     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        //     maxZoom: 22,
+        //     ext: 'png'
+        // });
+
+        // This is the magnifying glass layer. It has no user-facing toggle (besides the mag.glass itself)
+        var osmBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            maxZoom: 22,
+            attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
         });
+
+        var base = L.tileLayer('https://api.mapbox.com/styles/v1/a9696/cj1vva584000i2rkx28aayjh3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
+            maxZoom: 20
+        })
 
         // Call the National Registry of Historic Places points. This layer
         //   should ride on top of all other layers and should be able to be
@@ -61,19 +79,47 @@
         var historicPlaces = L.geoJson(al_historic, {
             pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {
-                        opacity: 0.8,
-                        title: feature.properties.name,
+                        opacity: 1.0,
+                        //title: feature.properties.name,
                         riseOnHover: true
                     })
-                    .bindPopup(feature.properties.name);
+                    .bindTooltip(feature.properties.name)
+                    .bindPopup("<b>" + feature.properties.name + "</b><br />" + feature.properties.desc);
             }
         });
 
-        // Call the historic maps (hosted at Mapbox) as variables
-        var mobile1838 = L.tileLayer('https://api.mapbox.com/v4/a9696.5syle2cu/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
-            minZoom: 10,
-            maxZoom: 19
+        var historicClusterMarkers = L.markerClusterGroup({
+            disableClusteringAtZoom: 16
         });
+        historicClusterMarkers.addLayer(historicPlaces);
+
+        // Call the National Registry of Historic Places points. This layer
+        //   should ride on top of all other layers and should be able to be
+        //   toggled on and off.
+        var magHistoricPlaces = L.geoJson(al_historic, {
+            pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {
+                        opacity: 1.0,
+                        //title: feature.properties.name,
+                        riseOnHover: true
+                    })
+                    .bindTooltip(feature.properties.name)
+                    .bindPopup("<b>" + feature.properties.name + "</b><br />" + feature.properties.desc);
+            }
+        });
+
+        var magHistoricClusterMarkers = L.markerClusterGroup({
+            disableClusteringAtZoom: 16
+        });
+        magHistoricClusterMarkers.addLayer(magHistoricPlaces);
+
+
+        // Call the historic maps (hosted at Mapbox) as variables
+        var mobile1838 = L.tileLayer('https://api.mapbox.com/v4/a9696.3qd94pcr/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
+            minZoom: 10,
+            maxZoom: 21
+        });
+
 
         // Define the point to instantiate the map
         var center = [30.68, -88.05];
@@ -82,19 +128,22 @@
         var the_map = L.map('map', {
             center: center,
             zoom: 14,
-            layers: [base]
+            maxZoom: 20,
+            layers: [historicClusterMarkers, base],
+            fullscreenControl: true,
+            fullscreenControlOptions: {
+                position: 'topleft'
+            }
         });
-
-        // Initial add layers to map
-        historicPlaces.addTo(the_map);
 
         // Create a variable with the mutually exclusive historic layers,
         //   formatted for the StyledLayerControl plugin
         var historicMapList = [{
-            groupName: "Historic Map Layers",
+            groupName: "Historic Maps",
             expanded: true,
             layers: {
-                "Mobile 1838": mobile1838
+                "Mobile 1838": mobile1838,
+                "National Reg. Hist. Places": historicClusterMarkers
             }
         }];
 
@@ -104,8 +153,7 @@
             groupName: "Modern Maps",
             expanded: true,
             layers: {
-                "Modern street map": base,
-                "National Reg. Hist. Places": historicPlaces
+                "Modern street map": base
             }
         }];
 
@@ -120,30 +168,32 @@
 
         // Add layer control to map
         var layerControl = L.Control.styledLayerControl(
-            historicMapList, baseMapList, layerControlOptions);
+            baseMapList, historicMapList, layerControlOptions);
+        //baseMapList, layerControlOptions);
         the_map.addControl(layerControl);
 
         // Add scalebar to map
         L.control.scale().addTo(the_map);
 
         // The "easy button" that toggles the magnifying glass
-        L.easyButton('<span class="glass">&telrec;</span>', function() {
-            if (the_map.hasLayer(magnifyingGlass)) {
-                the_map.removeLayer(magnifyingGlass);
+        L.easyButton('<span class="glass" style="font-size: 3em">&telrec;</span>', function() {
+            if (the_map.hasLayer(mg)) {
+                the_map.removeLayer(mg);
             } else {
-                magnifyingGlass.addTo(the_map);
+                mg.addTo(the_map);
             }
         }).addTo(the_map);
 
-        // Allows the user to choose which layer shows up in the
-        //   magnifying glass.
-
         // Create the magnifying glass layer
-        var theMagnifiedLayer = mobile1838
-        var magnifyingGlass = L.magnifyingGlass({
+        var mg = L.magnifyingGlass({
             zoomOffset: 0,
-            radius: 150,
-            layers: [theMagnifiedLayer]
+            radius: 180,
+            layers: [magHistoricClusterMarkers, osmBase]
+        })
+
+        // Remove the magnifying glass on left click.
+        mg.on('click', function() {
+            the_map.removeLayer(mg);
         })
     </script>
 
@@ -151,6 +201,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
+    <div id="sometext">
+        <p>Allen aven's map</p>
+    </div>
 </body>
 
 </html>
