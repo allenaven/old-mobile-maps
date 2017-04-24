@@ -1,180 +1,1892 @@
 var al_historic = {
     "type": "FeatureCollection",
     "features": [
-        { "type": "Feature", "id": 1, "properties": { "name": "Allen House", "lon": -87.736846, "lat": 30.302674 }, "geometry": { "type": "Point", "coordinates": [-87.736845883999905, 30.302674401] } },
-        { "type": "Feature", "id": 2, "properties": { "name": "Ashland Place Historic District", "lon": -88.094397, "lat": 30.690632 }, "geometry": { "type": "Point", "coordinates": [-88.094396512999893, 30.690632234000098] } },
-        { "type": "Feature", "id": 3, "properties": { "name": "Askew, Wade, House", "lon": -88.089264, "lat": 30.688093 }, "geometry": { "type": "Point", "coordinates": [-88.089263915999894, 30.688093185000099] } },
-        { "type": "Feature", "id": 4, "properties": { "name": "Austin, Hiram B., House", "lon": -88.104116, "lat": 30.419831 }, "geometry": { "type": "Point", "coordinates": [-88.104116108999904, 30.419830635] } },
-        { "type": "Feature", "id": 5, "properties": { "name": "Azalea Court Apartments", "lon": -88.082314, "lat": 30.678003 }, "geometry": { "type": "Point", "coordinates": [-88.082313537999894, 30.678003311000101] } },
-        { "type": "Feature", "id": 6, "properties": { "name": "Bank of Fairhope", "lon": -87.903824, "lat": 30.523027 }, "geometry": { "type": "Point", "coordinates": [-87.903823852999906, 30.523027420000101] } },
-        { "type": "Feature", "id": 7, "properties": { "name": "Barr&apos;s Subdivision Historic District", "lon": -88.239235, "lat": 31.091911 }, "geometry": { "type": "Point", "coordinates": [-88.239235371000021, 31.0919113140001] } },
-        { "type": "Feature", "id": 8, "properties": { "name": "Barton Academy", "lon": -88.047333, "lat": 30.688198 }, "geometry": { "type": "Point", "coordinates": [-88.047332763999904, 30.6881980900001] } },
-        { "type": "Feature", "id": 9, "properties": { "name": "Battle House Royale", "lon": -88.041077, "lat": 30.692780 }, "geometry": { "type": "Point", "coordinates": [-88.041076659999902, 30.6927795410001] } },
-        { "type": "Feature", "id": 10, "properties": { "name": "Battles Wharf Historic District", "lon": -87.927266, "lat": 30.493836 }, "geometry": { "type": "Point", "coordinates": [-87.927266450999909, 30.493836235000099] } },
-        { "type": "Feature", "id": 11, "properties": { "name": "Beal-Gaillard House", "lon": -88.132240, "lat": 30.698454 }, "geometry": { "type": "Point", "coordinates": [-88.132240294999917, 30.6984539030001] } },
-        { "type": "Feature", "id": 12, "properties": { "name": "Beckner House", "lon": -87.904793, "lat": 30.522078 }, "geometry": { "type": "Point", "coordinates": [-87.904792785999902, 30.522077560000099] } },
-        { "type": "Feature", "id": 13, "properties": { "name": "Bellingrath Gardens and Home", "lon": -88.139475, "lat": 30.431591 }, "geometry": { "type": "Point", "coordinates": [-88.139474882999906, 30.431590821] } },
-        { "type": "Feature", "id": 14, "properties": { "name": "Bishop Manor Estate", "lon": -88.259901, "lat": 30.450542 }, "geometry": { "type": "Point", "coordinates": [-88.259900844999905, 30.450542012000099] } },
-        { "type": "Feature", "id": 15, "properties": { "name": "Bloxham, Carl L., Building", "lon": -87.905167, "lat": 30.523052 }, "geometry": { "type": "Point", "coordinates": [-87.905166625999897, 30.523052216000099] } },
-        { "type": "Feature", "id": 16, "properties": { "name": "Bragg-Mitchell House", "lon": -88.086105, "lat": 30.691746 }, "geometry": { "type": "Point", "coordinates": [-88.086105346999901, 30.691745758000099] } },
-        { "type": "Feature", "id": 17, "properties": { "name": "Brisk & Jacobson Store", "lon": -88.040092, "lat": 30.692520 }, "geometry": { "type": "Point", "coordinates": [-88.040092467999898, 30.692520142] } },
-        { "type": "Feature", "id": 18, "properties": { "name": "Brodbeck--Zundel Historic District", "lon": -87.919091, "lat": 30.474259 }, "geometry": { "type": "Point", "coordinates": [-87.919090572999906, 30.474259163000099] } },
-        { "type": "Feature", "id": 19, "properties": { "name": "Brunell House", "lon": -87.776581, "lat": 30.400543 }, "geometry": { "type": "Point", "coordinates": [-87.776580810999903, 30.400543213] } },
-        { "type": "Feature", "id": 20, "properties": { "name": "Campground, The", "lon": -88.066301, "lat": 30.696298 }, "geometry": { "type": "Point", "coordinates": [-88.066300690999896, 30.696297753000099] } },
-        { "type": "Feature", "id": 21, "properties": { "name": "Captain Adams House", "lon": -87.911621, "lat": 30.589775 }, "geometry": { "type": "Point", "coordinates": [-87.911621093999898, 30.589775085] } },
-        { "type": "Feature", "id": 22, "properties": { "name": "Carlen House", "lon": -88.084755, "lat": 30.683704 }, "geometry": { "type": "Point", "coordinates": [-88.084754943999897, 30.683704376] } },
-        { "type": "Feature", "id": 23, "properties": { "name": "Carolina Hall", "lon": -88.145287, "lat": 30.690615 }, "geometry": { "type": "Point", "coordinates": [-88.145286559999903, 30.690614700000101] } },
-        { "type": "Feature", "id": 24, "properties": { "name": "Cavellero House", "lon": -88.044937, "lat": 30.691055 }, "geometry": { "type": "Point", "coordinates": [-88.04493713399999, 30.691055298] } },
-        { "type": "Feature", "id": 25, "properties": { "name": "Center-Gaillard House", "lon": -88.134438, "lat": 30.701385 }, "geometry": { "type": "Point", "coordinates": [-88.134437560999899, 30.701385498] } },
-        { "type": "Feature", "id": 26, "properties": { "name": "Central Core Historic District", "lon": -88.221867, "lat": 31.091382 }, "geometry": { "type": "Point", "coordinates": [-88.221867241999917, 31.0913824040001] } },
-        { "type": "Feature", "id": 27, "properties": { "name": "Chickasaw Shipyard Village Historic District", "lon": -88.065505, "lat": 30.767260 }, "geometry": { "type": "Point", "coordinates": [-88.065504535999906, 30.767260331] } },
-        { "type": "Feature", "id": 28, "properties": { "name": "Church Street East Historic District", "lon": -88.045725, "lat": 30.687911 }, "geometry": { "type": "Point", "coordinates": [-88.045724682999918, 30.687911289000098] } },
-        { "type": "Feature", "id": 29, "properties": { "name": "Church Street East Historic District (Boundary Increase)", "lon": -88.040369, "lat": 30.690869 }, "geometry": { "type": "Point", "coordinates": [-88.040369205999909, 30.690868721000101] } },
-        { "type": "Feature", "id": 30, "properties": { "name": "Church Street Historic District (Boundary Increase)", "lon": -88.041959, "lat": 30.683340 }, "geometry": { "type": "Point", "coordinates": [-88.0419588419999, 30.683339829000101] } },
-        { "type": "Feature", "id": 31, "properties": { "name": "Citronelle Railroad Historic District", "lon": -88.228760, "lat": 31.086021 }, "geometry": { "type": "Point", "coordinates": [-88.228759524999901, 31.086020876000099] } },
-        { "type": "Feature", "id": 32, "properties": { "name": "Clark, Willis G., House", "lon": -88.209445, "lat": 31.002847 }, "geometry": { "type": "Point", "coordinates": [-88.209445445999904, 31.0028468470001] } },
-        { "type": "Feature", "id": 33, "properties": { "name": "Cleveland, U. J., House", "lon": -88.056953, "lat": 30.676497 }, "geometry": { "type": "Point", "coordinates": [-88.056953429999894, 30.676496506] } },
-        { "type": "Feature", "id": 34, "properties": { "name": "Coley Building", "lon": -88.040428, "lat": 30.693497 }, "geometry": { "type": "Point", "coordinates": [-88.040428161999898, 30.693496704] } },
-        { "type": "Feature", "id": 35, "properties": { "name": "Collins-Marston House", "lon": -88.151619, "lat": 30.693497 }, "geometry": { "type": "Point", "coordinates": [-88.151618957999901, 30.693496704] } },
-        { "type": "Feature", "id": 36, "properties": { "name": "Collins-Robinson House", "lon": -88.152435, "lat": 30.694595 }, "geometry": { "type": "Point", "coordinates": [-88.152435302999905, 30.694595337000099] } },
-        { "type": "Feature", "id": 37, "properties": { "name": "Common Street District", "lon": -88.057621, "lat": 30.687427 }, "geometry": { "type": "Point", "coordinates": [-88.057621323999896, 30.687426976] } },
-        { "type": "Feature", "id": 38, "properties": { "name": "Convent and Academy of the Visitation", "lon": -88.093985, "lat": 30.693965 }, "geometry": { "type": "Point", "coordinates": [-88.093985160999921, 30.6939651520001] } },
-        { "type": "Feature", "id": 39, "properties": { "name": "Convent of Mercy", "lon": -88.052879, "lat": 30.689188 }, "geometry": { "type": "Point", "coordinates": [-88.052879332999893, 30.689188004000108] } },
-        { "type": "Feature", "id": 40, "properties": { "name": "Cullum, George W., House", "lon": -87.908501, "lat": 30.604750 }, "geometry": { "type": "Point", "coordinates": [-87.908500670999899, 30.604749680000101] } },
-        { "type": "Feature", "id": 41, "properties": { "name": "Dahm House", "lon": -88.045715, "lat": 30.690779 }, "geometry": { "type": "Point", "coordinates": [-88.045715331999901, 30.690778732000101] } },
-        { "type": "Feature", "id": 42, "properties": { "name": "Davis Avenue Branch, Mobile Public Library", "lon": -88.052634, "lat": 30.695372 }, "geometry": { "type": "Point", "coordinates": [-88.05263358499991, 30.695371612000098] } },
-        { "type": "Feature", "id": 43, "properties": { "name": "Davis--Oak Grove District", "lon": -88.187000, "lat": 30.861466 }, "geometry": { "type": "Point", "coordinates": [-88.187000342999909, 30.861465894] } },
-        { "type": "Feature", "id": 44, "properties": { "name": "De Tonti Square Historic District", "lon": -88.047263, "lat": 30.696011 }, "geometry": { "type": "Point", "coordinates": [-88.0472633239999, 30.6960105460001] } },
-        { "type": "Feature", "id": 45, "properties": { "name": "Denby House", "lon": -88.048676, "lat": 30.688904 }, "geometry": { "type": "Point", "coordinates": [-88.04867553699999, 30.688903809000099] } },
-        { "type": "Feature", "id": 46, "properties": { "name": "D&apos;Iberville Apartments", "lon": -88.088226, "lat": 30.691599 }, "geometry": { "type": "Point", "coordinates": [-88.088226317999911, 30.691598892000101] } },
-        { "type": "Feature", "id": 47, "properties": { "name": "Ellicott Stone", "lon": -88.000594, "lat": 31.001576 }, "geometry": { "type": "Point", "coordinates": [-88.000594240999902, 31.001575561] } },
-        { "type": "Feature", "id": 48, "properties": { "name": "Emanuel AME Church", "lon": -88.051460, "lat": 30.690401 }, "geometry": { "type": "Point", "coordinates": [-88.051460265999921, 30.690401077] } },
-        { "type": "Feature", "id": 49, "properties": { "name": "Emanuel Building", "lon": -88.041527, "lat": 30.693920 }, "geometry": { "type": "Point", "coordinates": [-88.041526793999907, 30.693920135] } },
-        { "type": "Feature", "id": 50, "properties": { "name": "Fairhope Bayfront District", "lon": -87.908786, "lat": 30.524583 }, "geometry": { "type": "Point", "coordinates": [-87.908786499999906, 30.524582763000101] } },
-        { "type": "Feature", "id": 51, "properties": { "name": "Fairhope Downtown Historic District", "lon": -87.903162, "lat": 30.522718 }, "geometry": { "type": "Point", "coordinates": [-87.903161683999897, 30.522717939000099] } },
-        { "type": "Feature", "id": 52, "properties": { "name": "Fearn, George, House", "lon": -88.083679, "lat": 30.677921 }, "geometry": { "type": "Point", "coordinates": [-88.083679198999903, 30.6779212950001] } },
-        { "type": "Feature", "id": 53, "properties": { "name": "Fire Station No. 5", "lon": -88.048019, "lat": 30.689939 }, "geometry": { "type": "Point", "coordinates": [-88.048019408999906, 30.689939499] } },
-        { "type": "Feature", "id": 54, "properties": { "name": "First Baptist Church", "lon": -87.776626, "lat": 30.884907 }, "geometry": { "type": "Point", "coordinates": [-87.776626046999894, 30.884907079000101] } },
-        { "type": "Feature", "id": 55, "properties": { "name": "First National Bank", "lon": -88.040619, "lat": 30.693447 }, "geometry": { "type": "Point", "coordinates": [-88.040618895999899, 30.693447113] } },
-        { "type": "Feature", "id": 56, "properties": { "name": "Foley Downtown Historic District", "lon": -87.683908, "lat": 30.406953 }, "geometry": { "type": "Point", "coordinates": [-87.683908499999902, 30.406952639000099] } },
-        { "type": "Feature", "id": 57, "properties": { "name": "Fort Conde-Charlotte", "lon": -88.040239, "lat": 30.688434 }, "geometry": { "type": "Point", "coordinates": [-88.040238686999899, 30.688433560000099] } },
-        { "type": "Feature", "id": 58, "properties": { "name": "Fort Gaines", "lon": -88.075261, "lat": 30.248040 }, "geometry": { "type": "Point", "coordinates": [-88.075260859999901, 30.248040112000101] } },
-        { "type": "Feature", "id": 59, "properties": { "name": "Fort Morgan", "lon": -88.018443, "lat": 30.230221 }, "geometry": { "type": "Point", "coordinates": [-88.01844318899991, 30.2302213510001] } },
-        { "type": "Feature", "id": 60, "properties": { "name": "Gaston Building", "lon": -87.905022, "lat": 30.523024 }, "geometry": { "type": "Point", "coordinates": [-87.905021666999914, 30.523023605] } },
-        { "type": "Feature", "id": 61, "properties": { "name": "Gates-Daves House", "lon": -88.075043, "lat": 30.687140 }, "geometry": { "type": "Point", "coordinates": [-88.075042843999896, 30.6871395830001] } },
-        { "type": "Feature", "id": 62, "properties": { "name": "Georgia Cottage", "lon": -88.100266, "lat": 30.695459 }, "geometry": { "type": "Point", "coordinates": [-88.100265502999903, 30.695459366000101] } },
-        { "type": "Feature", "id": 63, "properties": { "name": "Golf, Gun & Country Club", "lon": -87.894478, "lat": 30.522020 }, "geometry": { "type": "Point", "coordinates": [-87.894477843999894, 30.52202034] } },
-        { "type": "Feature", "id": 64, "properties": { "name": "Government Street Presbyterian Church", "lon": -88.044151, "lat": 30.689154 }, "geometry": { "type": "Point", "coordinates": [-88.044151305999904, 30.689153671] } },
-        { "type": "Feature", "id": 65, "properties": { "name": "Governor&apos;s Club", "lon": -87.776642, "lat": 30.397326 }, "geometry": { "type": "Point", "coordinates": [-87.776641845999904, 30.397325516000102] } },
-        { "type": "Feature", "id": 66, "properties": { "name": "Grand Bay Historic District", "lon": -88.342373, "lat": 30.476418 }, "geometry": { "type": "Point", "coordinates": [-88.342373394999896, 30.4764180220001] } },
-        { "type": "Feature", "id": 67, "properties": { "name": "Greene-Marston House", "lon": -88.087807, "lat": 30.686102 }, "geometry": { "type": "Point", "coordinates": [-88.087806701999895, 30.686101913000101] } },
-        { "type": "Feature", "id": 68, "properties": { "name": "Gulf, Mobile, and Ohio Passenger Terminal", "lon": -88.045692, "lat": 30.700390 }, "geometry": { "type": "Point", "coordinates": [-88.045692170999899, 30.7003903230001] } },
-        { "type": "Feature", "id": 69, "properties": { "name": "Hamner House", "lon": -87.707635, "lat": 30.318808 }, "geometry": { "type": "Point", "coordinates": [-87.707634729999896, 30.3188079070001] } },
-        { "type": "Feature", "id": 70, "properties": { "name": "Hawthorn House", "lon": -88.088562, "lat": 30.699343 }, "geometry": { "type": "Point", "coordinates": [-88.088562011999898, 30.699342728000101] } },
-        { "type": "Feature", "id": 71, "properties": { "name": "Horst, Martin, House", "lon": -88.046249, "lat": 30.689672 }, "geometry": { "type": "Point", "coordinates": [-88.0462493899999, 30.689672470000101] } },
-        { "type": "Feature", "id": 72, "properties": { "name": "Hunter House", "lon": -88.048584, "lat": 30.690741 }, "geometry": { "type": "Point", "coordinates": [-88.048583983999904, 30.6907405850001] } },
-        { "type": "Feature", "id": 73, "properties": { "name": "Johnson, Axil, House", "lon": -87.889427, "lat": 30.527325 }, "geometry": { "type": "Point", "coordinates": [-87.889427184999903, 30.527324677000099] } },
-        { "type": "Feature", "id": 74, "properties": { "name": "Jossen, Joseph, House", "lon": -88.043739, "lat": 30.693327 }, "geometry": { "type": "Point", "coordinates": [-88.043739318999897, 30.693326950000099] } },
-        { "type": "Feature", "id": 75, "properties": { "name": "Killcreas House", "lon": -87.856545, "lat": 30.907321 }, "geometry": { "type": "Point", "coordinates": [-87.856545452999896, 30.9073210490001] } },
-        { "type": "Feature", "id": 76, "properties": { "name": "Kirkbride House", "lon": -88.039635, "lat": 30.688231 }, "geometry": { "type": "Point", "coordinates": [-88.039634704999898, 30.688230515] } },
-        { "type": "Feature", "id": 77, "properties": { "name": "Latham United Methodist Church", "lon": -87.830889, "lat": 31.098411 }, "geometry": { "type": "Point", "coordinates": [-87.830889054999901, 31.098411228000099] } },
-        { "type": "Feature", "id": 78, "properties": { "name": "Leatherbury, George, House", "lon": -88.251136, "lat": 30.379886 }, "geometry": { "type": "Point", "coordinates": [-88.251136187999904, 30.379885810000101] } },
-        { "type": "Feature", "id": 79, "properties": { "name": "Lebanon Chapel AME Church", "lon": -87.894240, "lat": 30.513657 }, "geometry": { "type": "Point", "coordinates": [-87.894240187999898, 30.5136568090001] } },
-        { "type": "Feature", "id": 80, "properties": { "name": "Leinkauf Historic District", "lon": -88.072796, "lat": 30.677468 }, "geometry": { "type": "Point", "coordinates": [-88.072795673999906, 30.677467513000099] } },
-        { "type": "Feature", "id": 81, "properties": { "name": "Levy, George, House", "lon": -88.089264, "lat": 30.688217 }, "geometry": { "type": "Point", "coordinates": [-88.089263915999894, 30.688217163] } },
-        { "type": "Feature", "id": 82, "properties": { "name": "Lindsey, Martin, House", "lon": -88.059242, "lat": 30.606701 }, "geometry": { "type": "Point", "coordinates": [-88.059242248999894, 30.606700897000099] } },
-        { "type": "Feature", "id": 83, "properties": { "name": "Lower Dauphin Street Commercial District (Boundary Increase II)", "lon": -88.045632, "lat": 30.690944 }, "geometry": { "type": "Point", "coordinates": [-88.045632084999895, 30.690943756000099] } },
-        { "type": "Feature", "id": 84, "properties": { "name": "Lower Dauphin Street Commercial District (Boundary Increase III)", "lon": -88.045810, "lat": 30.691908 }, "geometry": { "type": "Point", "coordinates": [-88.045809528, 30.691907786000119] } },
-        { "type": "Feature", "id": 85, "properties": { "name": "Lower Dauphin Street Historic District", "lon": -88.046543, "lat": 30.690224 }, "geometry": { "type": "Point", "coordinates": [-88.046543089999901, 30.690223603] } },
-        { "type": "Feature", "id": 86, "properties": { "name": "Lower Dauphin Street Historic District (Boundary Increase)", "lon": -88.044097, "lat": 30.690884 }, "geometry": { "type": "Point", "coordinates": [-88.044096669999917, 30.690883924] } },
-        { "type": "Feature", "id": 87, "properties": { "name": "Magee, Jacob, House", "lon": -88.163680, "lat": 30.821825 }, "geometry": { "type": "Point", "coordinates": [-88.163679716999894, 30.8218247830001] } },
-        { "type": "Feature", "id": 88, "properties": { "name": "Magnolia Cemetery including Mobile National Cemetery", "lon": -88.062534, "lat": 30.674583 }, "geometry": { "type": "Point", "coordinates": [-88.062533749999901, 30.674583292000101] } },
-        { "type": "Feature", "id": 89, "properties": { "name": "McIntosh Log Church", "lon": -88.029489, "lat": 31.264342 }, "geometry": { "type": "Point", "coordinates": [-88.029488695999902, 31.264342427000098] } },
-        { "type": "Feature", "id": 90, "properties": { "name": "McMillan House", "lon": -87.911880, "lat": 30.598457 }, "geometry": { "type": "Point", "coordinates": [-87.911880492999899, 30.598457336000099] } },
-        { "type": "Feature", "id": 91, "properties": { "name": "Meaher-Zoghby House", "lon": -88.045700, "lat": 30.690744 }, "geometry": { "type": "Point", "coordinates": [-88.045700072999907, 30.690744400000099] } },
-        { "type": "Feature", "id": 92, "properties": { "name": "Megginson, Ernest, House", "lon": -88.089272, "lat": 30.689335 }, "geometry": { "type": "Point", "coordinates": [-88.089271544999903, 30.689334869] } },
-        { "type": "Feature", "id": 93, "properties": { "name": "Methodist Episcopal Church, South", "lon": -87.909180, "lat": 30.601591 }, "geometry": { "type": "Point", "coordinates": [-87.909179687999895, 30.601591110000101] } },
-        { "type": "Feature", "id": 94, "properties": { "name": "Metzger House", "lon": -88.047234, "lat": 30.690212 }, "geometry": { "type": "Point", "coordinates": [-88.047233581999905, 30.690212250000101] } },
-        { "type": "Feature", "id": 95, "properties": { "name": "Middle Bay Light", "lon": -88.017975, "lat": 30.436322 }, "geometry": { "type": "Point", "coordinates": [-88.017975192999899, 30.436321622] } },
-        { "type": "Feature", "id": 96, "properties": { "name": "Midtown Historic District", "lon": -88.078875, "lat": 30.683399 }, "geometry": { "type": "Point", "coordinates": [-88.078874551999903, 30.683399384] } },
-        { "type": "Feature", "id": 97, "properties": { "name": "Miller-O&apos;Donnell House", "lon": -88.056343, "lat": 30.664534 }, "geometry": { "type": "Point", "coordinates": [-88.056343078999902, 30.664533615] } },
-        { "type": "Feature", "id": 98, "properties": { "name": "Mobile City Hall", "lon": -88.040108, "lat": 30.689980 }, "geometry": { "type": "Point", "coordinates": [-88.040107726999906, 30.6899795530001] } },
-        { "type": "Feature", "id": 99, "properties": { "name": "Mobile City Hospital", "lon": -88.056358, "lat": 30.690609 }, "geometry": { "type": "Point", "coordinates": [-88.056358336999907, 30.6906089780001] } },
-        { "type": "Feature", "id": 100, "properties": { "name": "Monterey Place", "lon": -88.074898, "lat": 30.684017 }, "geometry": { "type": "Point", "coordinates": [-88.074897765999907, 30.684017181000101] } },
-        { "type": "Feature", "id": 101, "properties": { "name": "Montgomery Hill Baptist Church", "lon": -87.786650, "lat": 31.163021 }, "geometry": { "type": "Point", "coordinates": [-87.786649915999902, 31.1630205710001] } },
-        { "type": "Feature", "id": 102, "properties": { "name": "Montrose Historic District", "lon": -87.900501, "lat": 30.568765 }, "geometry": { "type": "Point", "coordinates": [-87.900501415, 30.568764518000108] } },
-        { "type": "Feature", "id": 103, "properties": { "name": "Moore Store", "lon": -87.779480, "lat": 30.398693 }, "geometry": { "type": "Point", "coordinates": [-87.7794799799999, 30.398693085] } },
-        { "type": "Feature", "id": 104, "properties": { "name": "Morrison, James Arthur, House", "lon": -88.150230, "lat": 30.687040 }, "geometry": { "type": "Point", "coordinates": [-88.150230407999899, 30.687040329000101] } },
-        { "type": "Feature", "id": 105, "properties": { "name": "Mount Vernon Arsenal--Searcy Hospital Complex", "lon": -88.028536, "lat": 31.087909 }, "geometry": { "type": "Point", "coordinates": [-88.028535603999899, 31.087909087000099] } },
-        { "type": "Feature", "id": 106, "properties": { "name": "Murphy High School", "lon": -88.084755, "lat": 30.682995 }, "geometry": { "type": "Point", "coordinates": [-88.084754943999897, 30.682994843000099] } },
-        { "type": "Feature", "id": 107, "properties": { "name": "Nelson House", "lon": -87.831073, "lat": 31.085796 }, "geometry": { "type": "Point", "coordinates": [-87.831072823999904, 31.085796314] } },
-        { "type": "Feature", "id": 108, "properties": { "name": "Neville House", "lon": -88.043983, "lat": 30.692329 }, "geometry": { "type": "Point", "coordinates": [-88.043983458999904, 30.692329407] } },
-        { "type": "Feature", "id": 109, "properties": { "name": "Nicholson House", "lon": -87.736896, "lat": 30.292694 }, "geometry": { "type": "Point", "coordinates": [-87.736896043999906, 30.292693709] } },
-        { "type": "Feature", "id": 110, "properties": { "name": "Oakleigh", "lon": -88.059929, "lat": 30.680988 }, "geometry": { "type": "Point", "coordinates": [-88.059928893999896, 30.6809883120001] } },
-        { "type": "Feature", "id": 111, "properties": { "name": "Oakleigh Garden Historic District", "lon": -88.061918, "lat": 30.682240 }, "geometry": { "type": "Point", "coordinates": [-88.06191812099992, 30.682239805000101] } },
-        { "type": "Feature", "id": 112, "properties": { "name": "Oakleigh Garden Historic District (Boundary Increase)", "lon": -88.057796, "lat": 30.678583 }, "geometry": { "type": "Point", "coordinates": [-88.057796353999905, 30.678583039] } },
-        { "type": "Feature", "id": 113, "properties": { "name": "Old Dauphin Way Historic District", "lon": -88.067908, "lat": 30.689571 }, "geometry": { "type": "Point", "coordinates": [-88.0679076589999, 30.689571479000101] } },
-        { "type": "Feature", "id": 114, "properties": { "name": "Orrell House", "lon": -87.703978, "lat": 30.316481 }, "geometry": { "type": "Point", "coordinates": [-87.703977611999903, 30.316481428000099] } },
-        { "type": "Feature", "id": 115, "properties": { "name": "Paterson House", "lon": -88.078827, "lat": 30.678511 }, "geometry": { "type": "Point", "coordinates": [-88.078826903999897, 30.678510666000101] } },
-        { "type": "Feature", "id": 116, "properties": { "name": "Paterson, J. E., House", "lon": -88.089233, "lat": 30.688591 }, "geometry": { "type": "Point", "coordinates": [-88.089233397999905, 30.688591003000099] } },
-        { "type": "Feature", "id": 117, "properties": { "name": "Patton, Dave, House", "lon": -88.063240, "lat": 30.699295 }, "geometry": { "type": "Point", "coordinates": [-88.063240050999894, 30.699295044000099] } },
-        { "type": "Feature", "id": 118, "properties": { "name": "People&apos;s Supply Company", "lon": -87.750809, "lat": 30.544743 }, "geometry": { "type": "Point", "coordinates": [-87.750808715999895, 30.544742584000101] } },
-        { "type": "Feature", "id": 119, "properties": { "name": "Pfau-Creighton Cottage", "lon": -88.127663, "lat": 30.698647 }, "geometry": { "type": "Point", "coordinates": [-88.127662658999895, 30.698646545000098] } },
-        { "type": "Feature", "id": 120, "properties": { "name": "Phillipi House", "lon": -88.045372, "lat": 30.691950 }, "geometry": { "type": "Point", "coordinates": [-88.045372008999905, 30.691949844000099] } },
-        { "type": "Feature", "id": 121, "properties": { "name": "Pincus Building", "lon": -88.040848, "lat": 30.692158 }, "geometry": { "type": "Point", "coordinates": [-88.0408477779999, 30.692157745000099] } },
-        { "type": "Feature", "id": 122, "properties": { "name": "Point Clear Historic District", "lon": -87.927907, "lat": 30.480125 }, "geometry": { "type": "Point", "coordinates": [-87.927907407999896, 30.480125119] } },
-        { "type": "Feature", "id": 123, "properties": { "name": "Portier, Bishop, House", "lon": -88.044655, "lat": 30.690126 }, "geometry": { "type": "Point", "coordinates": [-88.044654845999901, 30.690126419000102] } },
-        { "type": "Feature", "id": 124, "properties": { "name": "Protestant Children&apos;s Home", "lon": -88.055031, "lat": 30.687948 }, "geometry": { "type": "Point", "coordinates": [-88.055030822999896, 30.687948227] } },
-        { "type": "Feature", "id": 125, "properties": { "name": "Roberts House", "lon": -88.148781, "lat": 30.685921 }, "geometry": { "type": "Point", "coordinates": [-88.148780822999896, 30.685920715000101] } },
-        { "type": "Feature", "id": 126, "properties": { "name": "Saint Francis Xavier Roman Catholic Church", "lon": -88.080544, "lat": 30.709345 }, "geometry": { "type": "Point", "coordinates": [-88.080543517999899, 30.709344864000109] } },
-        { "type": "Feature", "id": 127, "properties": { "name": "Saint Joseph&apos;s Roman Catholic Church", "lon": -88.053764, "lat": 30.689602 }, "geometry": { "type": "Point", "coordinates": [-88.053764342999898, 30.689601898] } },
-        { "type": "Feature", "id": 128, "properties": { "name": "Saint Matthew&apos;s Catholic Church", "lon": -88.057693, "lat": 30.663671 }, "geometry": { "type": "Point", "coordinates": [-88.057693480999902, 30.663671494000099] } },
-        { "type": "Feature", "id": 129, "properties": { "name": "Saint Paul&apos;s Episcopal Chapel", "lon": -88.138771, "lat": 30.698547 }, "geometry": { "type": "Point", "coordinates": [-88.1387710569999, 30.698547363] } },
-        { "type": "Feature", "id": 130, "properties": { "name": "Saint Vincent de Paul", "lon": -88.045258, "lat": 30.682512 }, "geometry": { "type": "Point", "coordinates": [-88.045257567999897, 30.682512283000101] } },
-        { "type": "Feature", "id": 131, "properties": { "name": "Sand Island Light", "lon": -88.050622, "lat": 30.187827 }, "geometry": { "type": "Point", "coordinates": [-88.050622319999903, 30.1878270180001] } },
-        { "type": "Feature", "id": 132, "properties": { "name": "School of Organic Education", "lon": -87.901504, "lat": 30.521592 }, "geometry": { "type": "Point", "coordinates": [-87.901504492999905, 30.521592468000119] } },
-        { "type": "Feature", "id": 133, "properties": { "name": "Scottish Rites Temple", "lon": -88.045807, "lat": 30.691690 }, "geometry": { "type": "Point", "coordinates": [-88.045806884999905, 30.691690445000098] } },
-        { "type": "Feature", "id": 134, "properties": { "name": "Semmes, Raphael, House", "lon": -88.052147, "lat": 30.686743 }, "geometry": { "type": "Point", "coordinates": [-88.052146911999898, 30.686742783000099] } },
-        { "type": "Feature", "id": 135, "properties": { "name": "Sodality Chapel", "lon": -88.140732, "lat": 30.698282 }, "geometry": { "type": "Point", "coordinates": [-88.140731811999899, 30.698282242000101] } },
-        { "type": "Feature", "id": 136, "properties": { "name": "South Lafayette Street Creole Cottages", "lon": -88.071424, "lat": 30.685563 }, "geometry": { "type": "Point", "coordinates": [-88.071423580999905, 30.685563403000099] } },
-        { "type": "Feature", "id": 137, "properties": { "name": "Spotswood, Robert L., House", "lon": -88.152153, "lat": 30.691071 }, "geometry": { "type": "Point", "coordinates": [-88.152153014999911, 30.691070557] } },
-        { "type": "Feature", "id": 138, "properties": { "name": "Spring Hill College Quadrangle", "lon": -88.140732, "lat": 30.698282 }, "geometry": { "type": "Point", "coordinates": [-88.140731811999899, 30.698282242000101] } },
-        { "type": "Feature", "id": 139, "properties": { "name": "St. Francis Street Methodist Church", "lon": -88.044075, "lat": 30.691521 }, "geometry": { "type": "Point", "coordinates": [-88.04407501199999, 30.6915206910001] } },
-        { "type": "Feature", "id": 140, "properties": { "name": "St. Louis Street Missionary Baptist Church", "lon": -88.051117, "lat": 30.690741 }, "geometry": { "type": "Point", "coordinates": [-88.051116942999911, 30.6907405850001] } },
-        { "type": "Feature", "id": 141, "properties": { "name": "St. Mark&apos;s Lutheran Church", "lon": -87.598707, "lat": 30.417171 }, "geometry": { "type": "Point", "coordinates": [-87.598706507999921, 30.417170932000101] } },
-        { "type": "Feature", "id": 142, "properties": { "name": "St. Patrick&apos;s Catholic Church", "lon": -87.752905, "lat": 30.619854 }, "geometry": { "type": "Point", "coordinates": [-87.752904704999906, 30.619854169000099] } },
-        { "type": "Feature", "id": 143, "properties": { "name": "St. Paul&apos;s Episcopal Church", "lon": -87.771419, "lat": 30.401466 }, "geometry": { "type": "Point", "coordinates": [-87.771419314999903, 30.401465908] } },
-        { "type": "Feature", "id": 144, "properties": { "name": "Starke, Lewis, House", "lon": -87.908569, "lat": 30.608244 }, "geometry": { "type": "Point", "coordinates": [-87.9085693359999, 30.608243942000101] } },
-        { "type": "Feature", "id": 145, "properties": { "name": "State Bank Silverhill", "lon": -87.748856, "lat": 30.545527 }, "geometry": { "type": "Point", "coordinates": [-87.748855590999895, 30.545526505000119] } },
-        { "type": "Feature", "id": 146, "properties": { "name": "State Street A.M.E. Zion Church", "lon": -88.049957, "lat": 30.693756 }, "geometry": { "type": "Point", "coordinates": [-88.049957274999898, 30.693756104] } },
-        { "type": "Feature", "id": 147, "properties": { "name": "Stewart, Amelia, House", "lon": -88.087715, "lat": 30.690033 }, "geometry": { "type": "Point", "coordinates": [-88.087715148999905, 30.690032959000099] } },
-        { "type": "Feature", "id": 148, "properties": { "name": "Stewartfield", "lon": -88.140732, "lat": 30.698282 }, "geometry": { "type": "Point", "coordinates": [-88.140731811999899, 30.698282242000101] } },
-        { "type": "Feature", "id": 149, "properties": { "name": "Stockton Methodist Church", "lon": -87.853063, "lat": 31.015889 }, "geometry": { "type": "Point", "coordinates": [-87.853062637999898, 31.015888957000101] } },
-        { "type": "Feature", "id": 150, "properties": { "name": "Stone Street Baptist Church", "lon": -88.051735, "lat": 30.695444 }, "geometry": { "type": "Point", "coordinates": [-88.051734923999902, 30.6954441070001] } },
-        { "type": "Feature", "id": 151, "properties": { "name": "Stone Street Cemetery", "lon": -88.073771, "lat": 30.708995 }, "geometry": { "type": "Point", "coordinates": [-88.073770987999893, 30.708994612000101] } },
-        { "type": "Feature", "id": 152, "properties": { "name": "Street House", "lon": -87.898270, "lat": 30.464542 }, "geometry": { "type": "Point", "coordinates": [-87.898270310999905, 30.464541575000101] } },
-        { "type": "Feature", "id": 153, "properties": { "name": "Stuart, Henry, House", "lon": -87.894009, "lat": 30.556700 }, "geometry": { "type": "Point", "coordinates": [-87.894009019999899, 30.5566999340001] } },
-        { "type": "Feature", "id": 154, "properties": { "name": "Sunnyside Hotel", "lon": -87.781921, "lat": 30.398758 }, "geometry": { "type": "Point", "coordinates": [-87.781921386999898, 30.398757935] } },
-        { "type": "Feature", "id": 155, "properties": { "name": "Svea Land Company Office", "lon": -87.753785, "lat": 30.544864 }, "geometry": { "type": "Point", "coordinates": [-87.753784974999903, 30.5448640010001] } },
-        { "type": "Feature", "id": 156, "properties": { "name": "Swift Presbyterian Church", "lon": -87.627802, "lat": 30.375525 }, "geometry": { "type": "Point", "coordinates": [-87.6278016499999, 30.375524594000101] } },
-        { "type": "Feature", "id": 157, "properties": { "name": "Texas, The", "lon": -87.912209, "lat": 30.601233 }, "geometry": { "type": "Point", "coordinates": [-87.9122085569999, 30.6012325290001] } },
-        { "type": "Feature", "id": 158, "properties": { "name": "Thompson, N. Q. and Virginia M., House", "lon": -88.228433, "lat": 31.094875 }, "geometry": { "type": "Point", "coordinates": [-88.228433145999901, 31.094874735000101] } },
-        { "type": "Feature", "id": 159, "properties": { "name": "Trinity Episcopal Church", "lon": -88.086021, "lat": 30.686234 }, "geometry": { "type": "Point", "coordinates": [-88.086021422999906, 30.686233521000101] } },
-        { "type": "Feature", "id": 160, "properties": { "name": "Tschiener House", "lon": -88.061523, "lat": 30.689293 }, "geometry": { "type": "Point", "coordinates": [-88.061523437999895, 30.689292908000098] } },
-        { "type": "Feature", "id": 161, "properties": { "name": "Twin Beach AME Church", "lon": -87.909445, "lat": 30.501280 }, "geometry": { "type": "Point", "coordinates": [-87.909445081999905, 30.501279762000099] } },
-        { "type": "Feature", "id": 162, "properties": { "name": "U.S. Marine Hospital", "lon": -88.054291, "lat": 30.691364 }, "geometry": { "type": "Point", "coordinates": [-88.054290770999899, 30.691364288] } },
-        { "type": "Feature", "id": 163, "properties": { "name": "U.S.S. TECUMSEH", "lon": -88.025941, "lat": 30.231787 }, "geometry": { "type": "Point", "coordinates": [-88.02594141199999, 30.231787112000099] } },
-        { "type": "Feature", "id": 164, "properties": { "name": "US Post Office", "lon": -87.905197, "lat": 30.523052 }, "geometry": { "type": "Point", "coordinates": [-87.905197143999899, 30.523052216000099] } },
-        { "type": "Feature", "id": 165, "properties": { "name": "USS ALABAMA (battleship)", "lon": -88.015846, "lat": 30.682040 }, "geometry": { "type": "Point", "coordinates": [-88.01584566699999, 30.6820398230001] } },
-        { "type": "Feature", "id": 166, "properties": { "name": "USS DRUM (submarine)", "lon": -88.016667, "lat": 30.680680 }, "geometry": { "type": "Point", "coordinates": [-88.016666595999894, 30.680679946000101] } },
-        { "type": "Feature", "id": 167, "properties": { "name": "VanderSys, Arthur, House", "lon": -88.089272, "lat": 30.688589 }, "geometry": { "type": "Point", "coordinates": [-88.089271544999903, 30.688589096] } },
-        { "type": "Feature", "id": 168, "properties": { "name": "VanderSys, Jacob, House", "lon": -88.089272, "lat": 30.688900 }, "geometry": { "type": "Point", "coordinates": [-88.089271544999903, 30.688899994000099] } },
-        { "type": "Feature", "id": 169, "properties": { "name": "Vickers and Schumacher Buildings", "lon": -88.051410, "lat": 30.688434 }, "geometry": { "type": "Point", "coordinates": [-88.0514098619999, 30.688433840000108] } },
-        { "type": "Feature", "id": 170, "properties": { "name": "Walker House", "lon": -87.911613, "lat": 30.589661 }, "geometry": { "type": "Point", "coordinates": [-87.911613463999899, 30.589660645] } },
-        { "type": "Feature", "id": 171, "properties": { "name": "Walker, Joseph M., House", "lon": -88.089233, "lat": 30.688156 }, "geometry": { "type": "Point", "coordinates": [-88.089233397999905, 30.688156128000099] } },
-        { "type": "Feature", "id": 172, "properties": { "name": "Weems House", "lon": -88.062111, "lat": 30.691795 }, "geometry": { "type": "Point", "coordinates": [-88.062110900999897, 30.691795349000099] } },
-        { "type": "Feature", "id": 173, "properties": { "name": "White Avenue Historic District", "lon": -87.901029, "lat": 30.519719 }, "geometry": { "type": "Point", "coordinates": [-87.901028609999898, 30.5197188930001] } },
-        { "type": "Feature", "id": 174, "properties": { "name": "Whittier Hall", "lon": -87.906082, "lat": 30.524437 }, "geometry": { "type": "Point", "coordinates": [-87.9060821529999, 30.524436951] } },
-        { "type": "Feature", "id": 175, "properties": { "name": "Zurhorst House", "lon": -87.906219, "lat": 30.518976 }, "geometry": { "type": "Point", "coordinates": [-87.906219481999912, 30.518976212] } }
+        {
+            "type": "Feature",
+            "id": 1,
+            "properties": {
+                "name": "Africatown Historic District",
+                "desc": "Community established after the Civil War by African Americans who arrived in the United States aboard the slave ship Clotilde in 1860. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.058611,
+                "lat": 30.735278
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.058611,
+                    30.735278
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "properties": {
+                "name": "Aimwell Baptist Church",
+                "desc": "The congregation of this historically African American Baptist church was established in 1890. The current church building dates to 1946.",
+                "lon": -88.052778,
+                "lat": 30.699444
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.052778,
+                    30.699444
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "properties": {
+                "name": "Ashland Place Historic District",
+                "desc": "This historic district is an early 20th-century neighborhood consisting of over 90 homes. Architectural styles range from late Victorian to the Craftsman and Tudor Revival.",
+                "lon": -88.094444,
+                "lat": 30.690556
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.094444,
+                    30.690556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "properties": {
+                "name": "Wade Askew House",
+                "desc": "This bungalow in Midtown was built in 1927. It is one of the many Spanish Colonial Revival style houses in the Florence Place subdivision, established on what was the outskirts of Mobile in the 1920s. The subdivision was planned to have Spanish Revival houses only, reflecting the popularity of the style in the city during the early 20th century.",
+                "lon": -88.089444,
+                "lat": 30.688056
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.089444,
+                    30.688056
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "properties": {
+                "name": "Automobile Alley Historic District",
+                "desc": "",
+                "lon": -88.050152,
+                "lat": 30.692651
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.050152,
+                    30.692651
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 6,
+            "properties": {
+                "name": "Azalea Court Apartments",
+                "desc": "This three-story Spanish Colonial Revival style apartment building in Midtown was built in 1928.",
+                "lon": -88.083056,
+                "lat": 30.678056
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.083056,
+                    30.678056
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 7,
+            "properties": {
+                "name": "Barton Academy",
+                "desc": "This Greek Revival school building, designed by architects James Gallier, James H. Dakin and Charles B. Dakin, was completed in 1836. It was the first public school in the state of Alabama.",
+                "lon": -88.04776,
+                "lat": 30.68835
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04776,
+                    30.68835
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 8,
+            "properties": {
+                "name": "Battle House Royale",
+                "desc": "This downtown hotel was established in 1852. Guests have included Stephen A. Douglas, Henry Clay, Jefferson Davis, Millard Fillmore, Winfield Scott, and Woodrow Wilson. The first building burned in 1905. The current structure was completed in 1908 and is one of the earliest steel frame structures remaining in Alabama.",
+                "lon": -88.04082,
+                "lat": 30.69304
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04082,
+                    30.69304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 9,
+            "properties": {
+                "name": "Beal-Gaillard House",
+                "desc": "This Creole cottage style house was built in 1836 in what was then the village of Spring Hill. Spring Hill was primarily settled by Mobilians attempting to escape the heat and disease that plagued the city during the warm summer months.",
+                "lon": -88.13301,
+                "lat": 30.69928
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.13301,
+                    30.69928
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10,
+            "properties": {
+                "name": "Bragg-Mitchell House",
+                "desc": "This two-story mansion was built by John Bragg in 1855. It uses Greek Revival and Italianate stylistic elements in a combination referred to as \"bracketed Greek Revival\".",
+                "lon": -88.08622,
+                "lat": 30.69239
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08622,
+                    30.69239
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 11,
+            "properties": {
+                "name": "Brisk & Jacobson Store",
+                "desc": "This Italianate-style commercial building was completed in 1866 by local merchants Isaac Goldsmith and William Frohlichstein. The four-story structure features an early cast iron facade by Daniel D. Badger's Architectural Iron Works.",
+                "lon": -88.039722,
+                "lat": 30.692222
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.039722,
+                    30.692222
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 12,
+            "properties": {
+                "name": "Caldwell School",
+                "desc": "The school was built in 1947 to replace the first high school for African Americans in Mobile. It opened as an elementary school, and is today used by Bishop State Community College.",
+                "lon": -88.05737,
+                "lat": 30.69308
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05737,
+                    30.69308
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 13,
+            "properties": {
+                "name": "The Campground",
+                "desc": "This historic district encompasses a historically African American neighborhood consisting of over 166 contributing buildings. The houses date from the late 19th century to the middle 20th century. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.066389,
+                "lat": 30.696111
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.066389,
+                    30.696111
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 14,
+            "properties": {
+                "name": "Carlen House",
+                "desc": "This Gulf Coast cottage style house in Midtown was built in 1843 by Irish immigrants to Mobile, Michael and Mary Carlen.",
+                "lon": -88.08598,
+                "lat": 30.68404
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08598,
+                    30.68404
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 15,
+            "properties": {
+                "name": "Carolina Hall",
+                "desc": "This mansion in the Spring Hill neighborhood began as a Federal style house in 1832. It was later expanded and remodeled in the Greek Revival style.",
+                "lon": -88.143611,
+                "lat": 30.691389
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.143611,
+                    30.691389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 16,
+            "properties": {
+                "name": "Cavallero House",
+                "desc": "This two-and-a-half-story brick townhouse was built in 1835. Cast iron galleries were added to the front in the mid-19th century.",
+                "lon": -88.045,
+                "lat": 30.690833
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.045,
+                    30.690833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 17,
+            "properties": {
+                "name": "Center-Gaillard House",
+                "desc": "This two-story house in the Spring Hill neighborhood began as a retreat in 1827 and was expanded several times in the 19th century.",
+                "lon": -88.135,
+                "lat": 30.701389
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.135,
+                    30.701389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 18,
+            "properties": {
+                "name": "Church Street East Historic District",
+                "desc": "This downtown historic district features government, museum, commercial, and residential structures in a variety of 19th century styles. It contains 83 contributing buildings and one object. The second and third sets of boundaries represent boundary increases of 000000001984-01-13-0000January 13, 1984 and 000000002005-04-25-0000April 25, 2005 respectively.",
+                "lon": -88.045556,
+                "lat": 30.687778
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.045556,
+                    30.687778
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 19,
+            "properties": {
+                "name": "U. J. Cleveland House",
+                "desc": "This Gulf Coast cottage style house was built in 1853.",
+                "lon": -88.056667,
+                "lat": 30.676389
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.056667,
+                    30.676389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 20,
+            "properties": {
+                "name": "Coley Building",
+                "desc": "This two-and-a-half-story commercial building was built in 1836. It was demolished to make way for a RSA Battle House Tower parking deck in 2003. The original facade was restored, reconstructed and incorporated into the parking deck.",
+                "lon": -88.040278,
+                "lat": 30.693611
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.040278,
+                    30.693611
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 21,
+            "properties": {
+                "name": "Collins-Marston House",
+                "desc": "This \u200a1\u00a01\u20442-story wood-frame house in the Spring Hill neighborhood was built in the Gulf Coast cottage style in 1832.",
+                "lon": -88.151389,
+                "lat": 30.693056
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.151389,
+                    30.693056
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 22,
+            "properties": {
+                "name": "Collins-Robinson House",
+                "desc": "This Creole cottage style house in the Spring Hill neighborhood was built in 1843.",
+                "lon": -88.151944,
+                "lat": 30.695
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.151944,
+                    30.695
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 23,
+            "properties": {
+                "name": "Common Street District",
+                "desc": "This historic district, centered on Common Street, has now been absorbed by the Old Dauphin Way Historic District. It remains individually listed on the National Register and contains examples of Greek Revival, Italianate, and Queen Anne style architecture.",
+                "lon": -88.0575,
+                "lat": 30.687222
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.0575,
+                    30.687222
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 24,
+            "properties": {
+                "name": "Convent and Academy of the Visitation",
+                "desc": "This historic district encompasses the convent for the Order of the Visitation of Holy Mary, now known as the Visitation Monastery. The earliest structures date from 1855 with the latest dating to the 1890s. Architectural styles include the Renaissance Revival and Romanesque Revival styles.",
+                "lon": -88.093889,
+                "lat": 30.693889
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.093889,
+                    30.693889
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 25,
+            "properties": {
+                "name": "Convent of Mercy",
+                "desc": "This \u200a3\u00a01\u20442-story Baroque Revival style building was completed in 1908. It once served as the convent for the Sisters of Mercy, but has now been converted into condominiums.",
+                "lon": -88.052778,
+                "lat": 30.688889
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.052778,
+                    30.688889
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 26,
+            "properties": {
+                "name": "D'Iberville Apartments",
+                "desc": "This complex of apartment buildings in Midtown was built in the Minimal Traditionalist style in 1943, coinciding with Mobile's rapid growth during World War II.",
+                "lon": -88.089444,
+                "lat": 30.693611
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.089444,
+                    30.693611
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 27,
+            "properties": {
+                "name": "Dahm House",
+                "desc": "This two-story brick townhouse was built for John Dahm in 1873.",
+                "lon": -88.04607,
+                "lat": 30.6911
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04607,
+                    30.6911
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 28,
+            "properties": {
+                "name": "Davis Avenue Branch, Mobile Public Library",
+                "desc": "The Davis Avenue Branch of the Mobile Public Library was built in 1931 to serve Mobile's African American community during the era of racial segregation. The building is a smaller version of the main library on Government Street. It now serves as the National African American Archives and Museum. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.05104,
+                "lat": 30.6953
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05104,
+                    30.6953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 29,
+            "properties": {
+                "name": "Davis Avenue Recreation Center",
+                "desc": "Founded in 1921 as the Davis Avenue Community House, this was the first public recreation center for African Americans in Mobile. The current building dates to 1936 and was built using Works Progress Administration funds.",
+                "lon": -88.066111,
+                "lat": 30.7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.066111,
+                    30.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 30,
+            "properties": {
+                "name": "De Tonti Square Historic District",
+                "desc": "This historic district is primarily an antebellum neighborhood with over 60 contributing buildings. Many of the houses are two-story brick townhouses built in the Late Federal style with Greek Revival influences.",
+                "lon": -88.047222,
+                "lat": 30.695833
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.047222,
+                    30.695833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 31,
+            "properties": {
+                "name": "Denby House",
+                "desc": "This one-story brick raised cottage was built by Charles Denby in 1873.",
+                "lon": -88.04915,
+                "lat": 30.68885
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04915,
+                    30.68885
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 32,
+            "properties": {
+                "name": "Emanuel AME Church",
+                "desc": "This historically African American church was established in 1869. James F. Hutchisson, a prominent local architect, remodeled the existing building in a Gothic Revival style in 1881. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.051389,
+                "lat": 30.690556
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.051389,
+                    30.690556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 33,
+            "properties": {
+                "name": "Emanuel Building",
+                "desc": "This three-story commercial building was built in 1850.",
+                "lon": -88.041111,
+                "lat": 30.693889
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.041111,
+                    30.693889
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 34,
+            "properties": {
+                "name": "George Fearn House",
+                "desc": "This house in Midtown, built in 1904, is the earliest example of the Spanish Colonial Revival style in Mobile. It was designed by George Bigelow Rogers.",
+                "lon": -88.0822,
+                "lat": 30.6783
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.0822,
+                    30.6783
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 35,
+            "properties": {
+                "name": "Fire Station No. 5",
+                "desc": "This unusual Greek Revival style building is the earliest surviving fire station in the city, built in 1851.",
+                "lon": -88.048333,
+                "lat": 30.690278
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.048333,
+                    30.690278
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 36,
+            "properties": {
+                "name": "First National Bank",
+                "desc": "This two-story bank building was built in the Classical Revival style in 1905. The architectural features are rendered in glazed terracotta.",
+                "lon": -88.04071,
+                "lat": 30.69354
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04071,
+                    30.69354
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 37,
+            "properties": {
+                "name": "Fort Conde-Charlotte",
+                "desc": "This reconstruction of Mobile's colonial Fort Cond\u00e9 was completed in 1976. The original fort foundations were discovered during the construction of the George Wallace Tunnel in the downtown commercial district. The current fort was rebuilt on the site after the tunnel was completed.",
+                "lon": -88.040278,
+                "lat": 30.688333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.040278,
+                    30.688333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 38,
+            "properties": {
+                "name": "Gates-Daves House",
+                "desc": "This house, built in 1841, is the best example of a Creole plantation house remaining in Mobile.",
+                "lon": -88.07538,
+                "lat": 30.68744
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.07538,
+                    30.68744
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 39,
+            "properties": {
+                "name": "Georgia Cottage",
+                "desc": "This Gulf Coast cottage with Greek Revival influences was the early home of author Augusta Jane Evans. It was completed in 1840.",
+                "lon": -88.09999,
+                "lat": 30.69636
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.09999,
+                    30.69636
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 40,
+            "properties": {
+                "name": "Government Street Presbyterian Church",
+                "desc": "This church, designed by James Gallier, James Dakin, and Charles Dakin, was completed in 1836. Designated a National Historic Landmark, it is one of the oldest and least-altered Greek Revival church buildings remaining in the United States.",
+                "lon": -88.04441,
+                "lat": 30.68942
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04441,
+                    30.68942
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 41,
+            "properties": {
+                "name": "Greene-Marston House",
+                "desc": "This house, commonly known as Termite Hall, began as \u200a1\u00a01\u20442-story cottage in 1851. It is closely associated with Mobile's literary history.",
+                "lon": -88.088611,
+                "lat": 30.686667
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.088611,
+                    30.686667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 42,
+            "properties": {
+                "name": "Gulf, Mobile and Ohio Passenger Terminal",
+                "desc": "This Mission Revival style train station was completed in 1907. It served as Mobile's terminal on the Mobile and Ohio Railroad, later to become the Gulf, Mobile and Ohio Railroad.",
+                "lon": -88.045556,
+                "lat": 30.700278
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.045556,
+                    30.700278
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 43,
+            "properties": {
+                "name": "Hawthorn House",
+                "desc": "This Gulf Coast cottage was built by Joshua K. Hawthorn in 1853.",
+                "lon": -88.08844,
+                "lat": 30.69965
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08844,
+                    30.69965
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 44,
+            "properties": {
+                "name": "Martin Horst House",
+                "desc": "This brick Italianate style house, one of the best examples remaining in the city, was completed in 1867.",
+                "lon": -88.04664,
+                "lat": 30.68937
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04664,
+                    30.68937
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 45,
+            "properties": {
+                "name": "Hunter House",
+                "desc": "This wood-frame Italianate style house was built by Bettie Hunter, a successful African American businesswoman and former slave, in 1878. She died less than a year after completing it. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.04893,
+                "lat": 30.69074
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04893,
+                    30.69074
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 46,
+            "properties": {
+                "name": "International Longshoreman's Association Hall",
+                "desc": "The International Longshoreman\u2019s Association (ILA) Hall dates to 1949. The Mobile chapter of the ILA was established in 1936 to represent African Americans working on the city's docks. Dr. Martin Luther King, Jr. spoke here on January 1, 1959.",
+                "lon": -88.049444,
+                "lat": 30.694167
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.049444,
+                    30.694167
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 47,
+            "properties": {
+                "name": "Joseph Jossen House",
+                "desc": "This brick Queen Anne style house was completed in 1906. It has been converted to commercial use.",
+                "lon": -88.04399,
+                "lat": 30.69347
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04399,
+                    30.69347
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 48,
+            "properties": {
+                "name": "Kirkbride House",
+                "desc": "The earliest section of this house, situated between the southern bastions of Fort Conde, dates to 1822 and incorporates portions of a former courthouse and jail that were converted into a kitchen wing.",
+                "lon": -88.04006,
+                "lat": 30.68838
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04006,
+                    30.68838
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 49,
+            "properties": {
+                "name": "Lafayette Heights Historic District",
+                "desc": "",
+                "lon": -88.069,
+                "lat": 30.6996
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.069,
+                    30.6996
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 50,
+            "properties": {
+                "name": "Leinkauf Historic District",
+                "desc": "This historic district is a late 19th and early 20th century neighborhood consisting of over 300 buildings. Architectural styles range from Queen Anne to Craftsman.",
+                "lon": -88.072778,
+                "lat": 30.677222
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.072778,
+                    30.677222
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 51,
+            "properties": {
+                "name": "George Levy House",
+                "desc": "This Spanish Colonial Revival style house in the Florence Place subdivision was completed in 1927.",
+                "lon": -88.08952,
+                "lat": 30.68829
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08952,
+                    30.68829
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 52,
+            "properties": {
+                "name": "Martin Lindsey House",
+                "desc": "This house, built in 1915, features a local vernacular style. It sits on Mobile Bay, along a remnant of the old Bay Shell Road.",
+                "lon": -88.05957,
+                "lat": 30.60653
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05957,
+                    30.60653
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 53,
+            "properties": {
+                "name": "Lower Dauphin Street Historic District",
+                "desc": "This historic district encompasses much of Mobile's oldest intact business district. Second, third, and fourth sets of boundaries represent boundary increases of 000000001982-02-19-0000February 19, 1982, 000000001995-06-30-0000June 30, 1995, and 000000001998-08-14-0000August 14, 1998 respectively",
+                "lon": -88.046389,
+                "lat": 30.69
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.046389,
+                    30.69
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 54,
+            "properties": {
+                "name": "Magnolia Cemetery",
+                "desc": "This city cemetery was established in 1836 and served as Mobile's primary burial site during the remainder of the 19th century. It contains more than 80,000 burials and features many elaborate monuments.",
+                "lon": -88.0625,
+                "lat": 30.674444
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.0625,
+                    30.674444
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 55,
+            "properties": {
+                "name": "Maysville Historic District",
+                "desc": "",
+                "lon": -88.074392,
+                "lat": 30.66562
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.074392,
+                    30.66562
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 56,
+            "properties": {
+                "name": "Meaher-Zoghby House",
+                "desc": "This two-story brick townhouse was built in 1901 for Augustine Meaher.",
+                "lon": -88.046111,
+                "lat": 30.690833
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.046111,
+                    30.690833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 57,
+            "properties": {
+                "name": "Ernest Megginson House",
+                "desc": "This Spanish Colonial Revival style house in the Florence Place subdivision was completed in 1927.",
+                "lon": -88.08954,
+                "lat": 30.69059
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08954,
+                    30.69059
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 58,
+            "properties": {
+                "name": "Metzger House",
+                "desc": "This one-story Italianate house was completed in 1875.",
+                "lon": -88.0475,
+                "lat": 30.690278
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.0475,
+                    30.690278
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 59,
+            "properties": {
+                "name": "Midtown Historic District",
+                "desc": "This historic district is made up of 20th century neighborhoods and contains 1270 contributing buildings.",
+                "lon": -88.078889,
+                "lat": 30.683333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.078889,
+                    30.683333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 60,
+            "properties": {
+                "name": "Miller-O'Donnell House",
+                "desc": "This was the site of a raised Gulf Coast cottage, built in 1837. It has been destroyed.",
+                "lon": -88.056944,
+                "lat": 30.664444
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.056944,
+                    30.664444
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 61,
+            "properties": {
+                "name": "Mobile City Hall",
+                "desc": "This National Historic Landmark was built to serve the combined functions of a market and city administration. It was completed in an Italianate style in 1857.",
+                "lon": -88.03969,
+                "lat": 30.6897
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.03969,
+                    30.6897
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 62,
+            "properties": {
+                "name": "Mobile City Hospital",
+                "desc": "This three-story brick hospital was completed in 1830. The Greek Revival style building served as the city-run hospital from 1831 until 1966. It served as a Confederate hospital during the American Civil War.",
+                "lon": -88.05556,
+                "lat": 30.69121
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05556,
+                    30.69121
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 63,
+            "properties": {
+                "name": "Monterey Place",
+                "desc": "Best known as the Shepard House, this Queen Anne style residence was completed in 1897.",
+                "lon": -88.074,
+                "lat": 30.68444
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.074,
+                    30.68444
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 64,
+            "properties": {
+                "name": "James Arthur Morrison House",
+                "desc": "This Spanish Colonial Revival style house in the Spring Hill neighborhood was completed in 1926.",
+                "lon": -88.14987,
+                "lat": 30.69386
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.14987,
+                    30.69386
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 65,
+            "properties": {
+                "name": "Mt. Olive Missionary Baptist Church No.1",
+                "desc": "This historically African American Baptist church was built in a vernacular style in 1916.",
+                "lon": -88.06889,
+                "lat": 30.69998
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.06889,
+                    30.69998
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 66,
+            "properties": {
+                "name": "Murphy High School",
+                "desc": "This Spanish Colonial Revival style school opened as Mobile High School in 1926.",
+                "lon": -88.086111,
+                "lat": 30.681944
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.086111,
+                    30.681944
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 67,
+            "properties": {
+                "name": "Neville House",
+                "desc": "This two-story brick townhouse was completed in 1896.",
+                "lon": -88.04475,
+                "lat": 30.69188
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04475,
+                    30.69188
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 68,
+            "properties": {
+                "name": "Oakdale Historic District",
+                "desc": "",
+                "lon": -88.0631,
+                "lat": 30.6661
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.0631,
+                    30.6661
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 69,
+            "properties": {
+                "name": "Oakleigh",
+                "desc": "This raised Greek Revival mansion was completed in 1833 by James W. Roper, owner of a local brickyard. The property originally included 35 acres (140,000\u00a0m2) of grounds, but the majority of it was converted to city lots in the mid-to-late 19th century.",
+                "lon": -88.060278,
+                "lat": 30.680833
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.060278,
+                    30.680833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 70,
+            "properties": {
+                "name": "Oakleigh Garden Historic District",
+                "desc": "Centered on the Oakleigh Mansion, this historic district contains over 280 contributing buildings. Architectural styles range from Greek Revival and Italianate to Queen Anne. Second set of boundaries represent a boundary increase of 000000001991-01-30-0000January 30, 1991; a boundary decrease was listed 000000002016-12-20-0000December 20, 2016.",
+                "lon": -88.061944,
+                "lat": 30.681944
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.061944,
+                    30.681944
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 71,
+            "properties": {
+                "name": "Old Dauphin Way Historic District",
+                "desc": "The largest of Mobile's historic districts contains neighborhoods ranging from the mid-19th to early 20th centuries. It contains over 1466 contributing buildings in styles ranging from Greek Revival and Gothic Revival to Queen Anne and Craftsman.",
+                "lon": -88.06863,
+                "lat": 30.6873
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.06863,
+                    30.6873
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 72,
+            "properties": {
+                "name": "Paterson House",
+                "desc": "This Mediterranean Revival style mansion in Midtown was completed in 1927.",
+                "lon": -88.07895,
+                "lat": 30.67793
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.07895,
+                    30.67793
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 73,
+            "properties": {
+                "name": "J. E. Paterson House",
+                "desc": "This Spanish Colonial Revival style house in the Florence Place subdivision was completed in 1929.",
+                "lon": -88.08903,
+                "lat": 30.68916
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08903,
+                    30.68916
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 74,
+            "properties": {
+                "name": "Dave Patton House",
+                "desc": "This mansion was built by Dave Patton, a successful African American businessman, in 1915. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.06327,
+                "lat": 30.69964
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.06327,
+                    30.69964
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 75,
+            "properties": {
+                "name": "Pfau-Crichton Cottage",
+                "desc": "This Gulf Coast cottage, best known as Chinaberry, was completed in 1862. Situated at the base of Spring Hill, it was once the home of Anne Randolph Crichton. She was the last direct descendant of Hugh Randolph Crichton, founder of the Mobile County town of Crichton.",
+                "lon": -88.12771,
+                "lat": 30.69853
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.12771,
+                    30.69853
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 76,
+            "properties": {
+                "name": "Phillipi House",
+                "desc": "This two-story brick townhouse was built in 1850. The architecture features a simple Federal style with a Greek Revival door surround. A cast iron gallery was added after the initial construction.",
+                "lon": -88.04555,
+                "lat": 30.69209
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04555,
+                    30.69209
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 77,
+            "properties": {
+                "name": "Pincus Building",
+                "desc": "This four-story brick commercial building was completed in 1891 in the Queen Anne style.",
+                "lon": -88.0407,
+                "lat": 30.69219
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.0407,
+                    30.69219
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 78,
+            "properties": {
+                "name": "Bishop Portier House",
+                "desc": "This Creole cottage was completed in 1833. It served as the residence of Michael Portier, Mobile's first Roman Catholic bishop.",
+                "lon": -88.04499,
+                "lat": 30.68988
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04499,
+                    30.68988
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 79,
+            "properties": {
+                "name": "Protestant Children's Home",
+                "desc": "This Late Federal style building was completed in 1845. It served as a Protestant orphanage.",
+                "lon": -88.055556,
+                "lat": 30.687222
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.055556,
+                    30.687222
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 80,
+            "properties": {
+                "name": "Roberts House",
+                "desc": "This Tudor Revival mansion was completed in 1929.",
+                "lon": -88.15043,
+                "lat": 30.68618
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.15043,
+                    30.68618
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 81,
+            "properties": {
+                "name": "Ross Knox House",
+                "desc": "This Tudor Revival house was completed in 1929.",
+                "lon": -88.14995,
+                "lat": 30.68804
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.14995,
+                    30.68804
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 82,
+            "properties": {
+                "name": "St. Francis Street Methodist Church",
+                "desc": "This Methodist church building was completed in 1896.",
+                "lon": -88.04452,
+                "lat": 30.69195
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04452,
+                    30.69195
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 83,
+            "properties": {
+                "name": "Saint Francis Xavier Roman Catholic Church",
+                "desc": "This Roman Catholic church building in the Toulminville neighborhood was built in 1916, after the previous building was destroyed in a hurricane.",
+                "lon": -88.08032,
+                "lat": 30.70933
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08032,
+                    30.70933
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 84,
+            "properties": {
+                "name": "Saint Joseph's Roman Catholic Church",
+                "desc": "This Gothic Revival church building was completed in 1909. It serves as the parish church for St. Joseph's Parish, established in 1857.",
+                "lon": -88.05376,
+                "lat": 30.68981
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05376,
+                    30.68981
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 85,
+            "properties": {
+                "name": "St. Louis Street Missionary Baptist Church",
+                "desc": "This Missionary Baptist church began with a rift in Mobile's African Baptist Church, later to become the Stone Street Baptist Church. The new congregation that split from the original formed this church. They purchased this property in 1859 and constructed a church. This Classical Revival building was built in 1872. In 1874 they hosted the seventh Colored Baptist Convention of Alabama here, which led to the formation of Selma University. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.05119,
+                "lat": 30.69132
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05119,
+                    30.69132
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 86,
+            "properties": {
+                "name": "Saint Matthew's Catholic Church",
+                "desc": "This Roman Catholic parish church was built in the Mediterranean Revival style in 1913, shortly after the formation of its parish.",
+                "lon": -88.057778,
+                "lat": 30.662778
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.057778,
+                    30.662778
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 87,
+            "properties": {
+                "name": "Saint Paul's Episcopal Chapel",
+                "desc": "This wood-frame Episcopal chapel in the Spring Hill neighborhood was completed in 1859. It is an example of Carpenter Gothic architecture.",
+                "lon": -88.13918,
+                "lat": 30.69813
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.13918,
+                    30.69813
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 88,
+            "properties": {
+                "name": "Saint Vincent de Paul",
+                "desc": "This Roman Catholic church, now known as Prince of Peace Church, began with an earlier frame structure, completed in 1847, that served as parish church for Saint Vincent de Paul Parish. This brick Gothic Revival building was built in 1872. Saint Vincent de Paul Parish was enlarged and renamed Prince of Peace Parish in 1970.",
+                "lon": -88.04504,
+                "lat": 30.6824
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04504,
+                    30.6824
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 89,
+            "properties": {
+                "name": "Scottish Rites Temple",
+                "desc": "This Egyptian Revival building was completed in 1921 for the Scottish Rite of Freemasonry. It was designed by George B. Rogers.",
+                "lon": -88.04627,
+                "lat": 30.69129
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04627,
+                    30.69129
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 90,
+            "properties": {
+                "name": "Raphael Semmes House",
+                "desc": "This two-story brick townhouse was completed in 1858. It is famous as the post-war home of Admiral Raphael Semmes, captain of the Confederate sloop-of-war CSS Alabama.",
+                "lon": -88.052222,
+                "lat": 30.686667
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.052222,
+                    30.686667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 91,
+            "properties": {
+                "name": "Sodality Chapel",
+                "desc": "This small Roman Catholic chapel building on the campus of Spring Hill College was completed in 1850.",
+                "lon": -88.13538,
+                "lat": 30.69225
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.13538,
+                    30.69225
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 92,
+            "properties": {
+                "name": "South Lafayette Street Creole Cottages",
+                "desc": "These three Creole cottages on South Lafayette Street were all completed in 1852.",
+                "lon": -88.07129,
+                "lat": 30.68554
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.07129,
+                    30.68554
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 93,
+            "properties": {
+                "name": "Robert L. Spotswood House",
+                "desc": "The Spanish Colonial Revival house in the Spring Hill neighborhood was completed in 1926.",
+                "lon": -88.14999,
+                "lat": 30.69258
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.14999,
+                    30.69258
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 94,
+            "properties": {
+                "name": "Spring Hill College Quadrangle",
+                "desc": "This grouping of structures on the campus of Spring Hill College includes the Renaissance Revival style Administration Building, completed in 1869, and the Gothic Revival style St. Joseph's Chapel, completed in 1910.",
+                "lon": -88.13707,
+                "lat": 30.69339
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.13707,
+                    30.69339
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 95,
+            "properties": {
+                "name": "State Street AME Zion Church",
+                "desc": "This is Mobile's oldest African American congregation, established in 1829 as the African Church of the City of Mobile. The current Romanesque Revival building was completed in 1854; it is the oldest remaining Methodist church building in Alabama. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.0502,
+                "lat": 30.6938
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.0502,
+                    30.6938
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 96,
+            "properties": {
+                "name": "Amelia Stewart House",
+                "desc": "This Greek Revival cottage in Midtown was completed in 1835.",
+                "lon": -88.08824,
+                "lat": 30.69048
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08824,
+                    30.69048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 97,
+            "properties": {
+                "name": "Stewartfield",
+                "desc": "This raised Greek Revival mansion in the Spring Hill neighborhood was completed in 1849.",
+                "lon": -88.14215,
+                "lat": 30.69426
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.14215,
+                    30.69426
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 98,
+            "properties": {
+                "name": "Stone Street Baptist Church",
+                "desc": "This African American congregation, the second oldest in Mobile, was established by 1836. They moved to their present location in 1870. The current building dates to 1909. It is on the African American Heritage Trail of Mobile.",
+                "lon": -88.05158,
+                "lat": 30.69609
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05158,
+                    30.69609
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 99,
+            "properties": {
+                "name": "Stone Street Cemetery",
+                "desc": "Now known as Catholic Cemetery, this cemetery was established in 1848 for the city's Roman Catholic community and religious orders by Michael Portier, the first Roman Catholic Bishop of Mobile.",
+                "lon": -88.07413,
+                "lat": 30.70963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.07413,
+                    30.70963
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 100,
+            "properties": {
+                "name": "Trinity Episcopal Church",
+                "desc": "This church was designed by Frank Wills and Henry Dudley. It was completed in 1857 for the city's second Episcopal congregation, established in 1845. Christ Church Cathedral was the first. The roof of Trinity Episcopal, as well as the east wall, were badly damaged by the Christmas Day tornado of 2012.",
+                "lon": -88.08583,
+                "lat": 30.68658
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08583,
+                    30.68658
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 101,
+            "properties": {
+                "name": "Tschiener House",
+                "desc": "This was the site of a Carpenter Gothic house, built in 1866, that has been destroyed since being listed on the National Register.",
+                "lon": -88.061944,
+                "lat": 30.689444
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.061944,
+                    30.689444
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 102,
+            "properties": {
+                "name": "Turner-Todd Motor Company",
+                "desc": "This brick commercial building was built in 1926 to house an early automobile company.",
+                "lon": -88.04867,
+                "lat": 30.69217
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04867,
+                    30.69217
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 103,
+            "properties": {
+                "name": "U.S. Marine Hospital",
+                "desc": "This Greek Revival hospital building was completed in 1842 for the Marine Hospital Service. It now serves the Mobile County Health Department. It served as a Confederate hospital during the American Civil War.",
+                "lon": -88.05473,
+                "lat": 30.69144
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.05473,
+                    30.69144
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 104,
+            "properties": {
+                "name": "United States Court House and Custom House",
+                "desc": "Federal courthouse that was completed in 1934 in a blending of the Renaissance Revival and Art Deco styles.",
+                "lon": -88.04317,
+                "lat": 30.693959
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.04317,
+                    30.693959
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 105,
+            "properties": {
+                "name": "USS Alabama (BB-60)",
+                "desc": "This World War II era South Dakota-class battleship now serves as a museum ship and the centerpiece of Battleship Memorial Park. She is one of two National Historic Landmarks housed within the park.",
+                "lon": -88.01448,
+                "lat": 30.68178
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.01448,
+                    30.68178
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 106,
+            "properties": {
+                "name": "USS Drum (SS-228)",
+                "desc": "Housed at Battleship Memorial Park, this World War II era Gato-class submarine is also a National Historic Landmark.",
+                "lon": -88.01669,
+                "lat": 30.68123
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.01669,
+                    30.68123
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 107,
+            "properties": {
+                "name": "Arthur VanderSys House",
+                "desc": "This Spanish Colonial Revival style house in the Florence Place subdivision was completed in 1926.",
+                "lon": -88.08961,
+                "lat": 30.68916
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08961,
+                    30.68916
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 108,
+            "properties": {
+                "name": "Jacob VanderSys House",
+                "desc": "This Spanish Colonial Revival style house in the Florence Place subdivision was completed in 1927.",
+                "lon": -88.08949,
+                "lat": 30.68988
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08949,
+                    30.68988
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 109,
+            "properties": {
+                "name": "Vickers and Schumacher Buildings",
+                "desc": "Completed in 1866, these two commercial buildings once served the Schumacher Carriage Works.",
+                "lon": -88.051389,
+                "lat": 30.688333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.051389,
+                    30.688333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 110,
+            "properties": {
+                "name": "Joseph M. Walker House",
+                "desc": "This Spanish Colonial Revival style house in the Florence Place subdivision was completed in 1927.",
+                "lon": -88.08906,
+                "lat": 30.68813
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.08906,
+                    30.68813
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 111,
+            "properties": {
+                "name": "Weems House",
+                "desc": "This late example of Greek Revival residential architecture was completed in 1870.",
+                "lon": -88.06266,
+                "lat": 30.69163
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.06266,
+                    30.69163
+                ]
+            }
+        }
     ]
 }
