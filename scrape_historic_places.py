@@ -1,11 +1,12 @@
+#!/usr/bin/env python
+# A.Aven 2017
 # ./get_al_historic.py
 
 """
-Scrapes the Wikipedia page for Mobile County National Historic Places and
-outputs them to a .geojson format file for import into a Leaflet webmap.
+Scrapes Wikipedia page for Mobile County National Historic Places. Parses
+historic place data table. Outputs to .geojson format for a Leaflet webmap.
 
-Requires Python 3, external packages Beautiful Soup 4 and requests, and 
-internal package json.
+Requires Python 3 and packages Beautiful Soup 4, requests, json
 """
 
 import requests
@@ -13,54 +14,62 @@ from bs4 import BeautifulSoup
 import json
 
 def scrape_url():
+    """Grabs the specified page and returns parsed BeautifulSoup object"""
     the_url = 'https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Mobile,_Alabama'
     html = requests.request('GET', the_url)
     return BeautifulSoup(html.content, 'html.parser')
 
 def place_to_dict(tablerow):
     """
-    :param tablerow: Input from bs4 
-    :return: A tuple suitable for dict creation
+    :param tablerow: One table row <tr> from bs4 which will be
+      broken down by this function
+    :return: A dict with which to build geojson
     """
-    # First td should have title:
+    # First td contains title:
     title = tablerow.find('td').text
 
     # Grab description from the td titled "note"
     descr = tablerow.find('td', 'note').text
 
-    # Extract lat and lon
+    # Extract lat and lon. Haven't had any errors but I put the try/except
+    #   in just incase it chokes on something funky.
     try:
         llstr = tablerow.find('span', 'geo').text.split(';')
         ll = [float(_) for _ in llstr]
     except:
         ll = ('error', 'error')
 
+    # Build dict to return
     data = {'name' : title, 'desc' : descr, 'lon' : ll[1], 'lat' : ll[0]}
 
-    # Return a tuple
+    # Return dict
     return data
 
 def build_geojson(features):
     """
     Building out the geojson is really just making a giant dict, filling it,
-    and exporting with json.dumps
-    :return: 
+    and returning it using json.dumps
+    :return:
     """
     # Initialize the outgoing structure
     feature_list = []
     for number, feature in enumerate(features):
         out = {'type' : 'Feature', 'id' : number + 1, 'properties' : feature,
-                   'geometry' : {'type': 'Point', 'coordinates': [feature['lon'], feature['lat']]}}
+               'geometry' : {'type': 'Point', 'coordinates': [feature['lon'], feature['lat']]}}
         feature_list.append(out)
 
-    al_historic = {'type' : 'FeatureCollection', 'features' : feature_list }
+    al_historic = {'type' : 'FeatureCollection', 'features' : feature_list}
     return json.dumps(al_historic, indent=4)
 
 def main():
+    """
+    Run the script
+    """
     soup = scrape_url()
     places = []
     for row in soup.find_all('tr'):
         try:
+            # Data rows are div class "vcard"
             if row.get('class')[0] == 'vcard':
                 place = place_to_dict(row)
                 places.append(place)
@@ -70,10 +79,12 @@ def main():
     the_json = build_geojson(places)
     the_json = 'var al_historic = ' + the_json
 
+    # Export to file. If the data get too big I'll have to implement
+    #   some io here. Not even close to that right now.
     with open('./al_historic.geojson', 'wt') as outfile:
         outfile.writelines(the_json)
 
-# Run the file. As a module, or otherwise.
+# Run script, as a module or otherwise
 if __name__ == main:
     main()
 else:

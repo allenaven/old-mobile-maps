@@ -5,122 +5,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Old Mobile</title>
+    <title>Old Mobile Maps</title>
 
-    <!-- Bootstrap v4, update frequently! -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="./static/old-mobile.css" />
+    <link rel="stylesheet" href="./static/leaflet.css" />
     <link rel="stylesheet" href="./static/leaflet.magnifyingglass.css" />
     <link rel="stylesheet" href="./static/styledLayerControl.css" />
     <link rel="stylesheet" href="./static/easy-button.css" />
-    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css" rel="stylesheet" />
-    <link href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./static/Control.FullScreen.css" />
+    <link href="./static/MarkerCluster.css" rel="stylesheet" />
+    <link href="./static/MarkerCluster.Default.css" rel="stylesheet" />
 
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="./static/leaflet.js"></script>
     <script src="./static/leaflet.magnifyingglass.js"></script>
     <script src="./static/styledLayerControl.js"></script>
     <script src="./static/easy-button.js"></script>
-    <script src="./al_historic.geojson" type="text/javascript"></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.0.4/dist/leaflet.markercluster-src.js"></script>
-
-    <link rel="stylesheet" href="./static/Control.FullScreen.css" />
+    <script src="./static/leaflet.markercluster.js"></script>
     <script src="./static/Control.FullScreen.js"></script>
-
-    <style type="text/css">
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            height: 600px;
-            width: 800px;
-        }
-        
-        .leaflet-container {
-            background-color: rgba(255, 0, 0, 0.0);
-        }
-    </style>
 </head>
 
 <body>
-    <div id="map"> </div>
+    <div id="container">
+
+        <h1><a href="https://datawork.space/map/map.html">Historic Mobile, Alabama</a></h1>
+
+        <div class="description">
+            <h3>New insights on an old city through modern Web and GIS technology</h3>
+            <p>
+                <ul>
+                    <li><a href="https://allenaven.com/project/old-mobile-map/" target="_blank">About the historic maps and this project</a></li>
+                    <li><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">Code, technical notes, license, attributions, bug reports</a></li>
+                </ul>
+            </p>
+            <p>
+                <b>Map is intended for fullscreen interaction!</b> Use the controls at top left to toggle fullscreen, window overlay, and zoom. Also, zoom with mouse wheel or touchscreen. Toggle historic map layers using controls at top right.
+            </p>
+        </div>
+
+        <!--Create the map div-->
+        <div id="map"></div>
+
+        <p align="center"><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">&copy; 2017 Allen Aven</a> This is an ongoing project. Please share comments and feedback.</p>
+
+    </div>
+
+    <!--Load the Historic placemarks from local geojson file-->
+    <script src="./al_historic.geojson" type="text/javascript"></script>
+
+    <!--Load the map layers-->
+    <script src="./load_layers.js"></script>
+
+    <!--Main script for Leaflet map-->
     <script>
-        // Call the basemap (free Stamen map) as a variable "base". This layer
-        //   should be the very bottom layer, and should be able to be toggled
-        //   on and off.
-
-        // var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.{ext}', {
-        //     //var base = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
-        //     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        //     maxZoom: 22,
-        //     ext: 'png'
-        // });
-
-        // This is the magnifying glass layer. It has no user-facing toggle (besides the mag.glass itself)
-        var osmBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            maxZoom: 22,
-            attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-        });
-
-        var base = L.tileLayer('https://api.mapbox.com/styles/v1/a9696/cj1vva584000i2rkx28aayjh3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
-            maxZoom: 20
-        })
-
-        // Call the National Registry of Historic Places points. This layer
-        //   should ride on top of all other layers and should be able to be
-        //   toggled on and off.
-        var historicPlaces = L.geoJson(al_historic, {
-            pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {
-                        opacity: 1.0,
-                        //title: feature.properties.name,
-                        riseOnHover: true
-                    })
-                    .bindTooltip(feature.properties.name)
-                    .bindPopup("<b>" + feature.properties.name + "</b><br />" + feature.properties.desc);
-            }
-        });
-
-        var historicClusterMarkers = L.markerClusterGroup({
-            disableClusteringAtZoom: 16
-        });
-        historicClusterMarkers.addLayer(historicPlaces);
-
-        // Call the National Registry of Historic Places points. This layer
-        //   should ride on top of all other layers and should be able to be
-        //   toggled on and off.
-        var magHistoricPlaces = L.geoJson(al_historic, {
-            pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {
-                        opacity: 1.0,
-                        //title: feature.properties.name,
-                        riseOnHover: true
-                    })
-                    .bindTooltip(feature.properties.name)
-                    .bindPopup("<b>" + feature.properties.name + "</b><br />" + feature.properties.desc);
-            }
-        });
-
-        var magHistoricClusterMarkers = L.markerClusterGroup({
-            disableClusteringAtZoom: 16
-        });
-        magHistoricClusterMarkers.addLayer(magHistoricPlaces);
-
-
-        // Call the historic maps (hosted at Mapbox) as variables
-        var mobile1838 = L.tileLayer('https://api.mapbox.com/v4/a9696.3qd94pcr/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
-            minZoom: 10,
-            maxZoom: 21
-        });
-
-
         // Define the point to instantiate the map
         var center = [30.68, -88.05];
 
@@ -136,46 +72,10 @@
             }
         });
 
-        // Create a variable with the mutually exclusive historic layers,
-        //   formatted for the StyledLayerControl plugin
-        var historicMapList = [{
-            groupName: "Historic Maps",
-            expanded: true,
-            layers: {
-                "Mobile 1838": mobile1838,
-                "National Reg. Hist. Places": historicClusterMarkers
-            }
-        }];
-
-        // Create a container for the modern-day map layers (street map and
-        //   historic place points) to pass to the layerControl
-        var baseMapList = [{
-            groupName: "Modern Maps",
-            expanded: true,
-            layers: {
-                "Modern street map": base
-            }
-        }];
-
-        // Set the StyledLayerControl aesthetic options
-        var layerControlOptions = {
-            container_width: "180px",
-            container_maxHeight: "550px",
-            group_maxHeight: "250px",
-            exclusive: false,
-            collapsed: false
-        };
-
-        // Add layer control to map
-        var layerControl = L.Control.styledLayerControl(
-            baseMapList, historicMapList, layerControlOptions);
-        //baseMapList, layerControlOptions);
-        the_map.addControl(layerControl);
-
-        // Add scalebar to map
-        L.control.scale().addTo(the_map);
-
-        // The "easy button" that toggles the magnifying glass
+        // Set up the magnifying glass:
+        //
+        // Add "easy button" that toggles the magnifying glass, will show up
+        //   on the left under the zoom/fullscreen controls
         L.easyButton('<span class="glass" style="font-size: 3em">&telrec;</span>', function() {
             if (the_map.hasLayer(mg)) {
                 the_map.removeLayer(mg);
@@ -195,15 +95,56 @@
         mg.on('click', function() {
             the_map.removeLayer(mg);
         })
+
+        // Set up the Layer Control box (right side, top)
+        //
+        // Create a container with the historic layers
+        //   for the StyledLayerControl plugin
+        var historicMapList = [{
+            groupName: "Historic Maps",
+            expanded: true,
+            layers: {
+                "Mobile 1838": mobile1838,
+                "Nat'l Registry of Historic Places (within city)": historicClusterMarkers
+            }
+        }];
+
+        // Create a container with the modern-day map layers (i.e., street map)
+        //   to pass to the layerControl
+        var baseMapList = [{
+            groupName: "Modern Maps",
+            expanded: true,
+            layers: {
+                "Modern street map": base
+            }
+        }];
+
+        // Set the StyledLayerControl aesthetic options
+        var layerControlOptions = {
+            container_width: "180px",
+            container_maxHeight: "550px",
+            group_maxHeight: "250px",
+            group_minHeight: "100px",
+            exclusive: false,
+            collapsed: false
+        };
+
+        // Add StyledLayerControl object to map
+        var layerControl = L.Control.styledLayerControl(
+            baseMapList, historicMapList, layerControlOptions);
+        the_map.addControl(layerControl);
+
+        // Add a scalebar to the map
+        L.control.scale().addTo(the_map);
+
+        // detect fullscreen toggling
+        the_map.on('enterFullscreen', function() {
+            if (window.console) window.console.log('enterFullscreen');
+        });
+        the_map.on('exitFullscreen', function() {
+            if (window.console) window.console.log('exitFullscreen');
+        });
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-    <div id="sometext">
-        <p>Allen aven's map</p>
-    </div>
 </body>
 
 </html>
