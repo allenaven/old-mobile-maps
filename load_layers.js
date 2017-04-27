@@ -29,7 +29,7 @@ var historicPlaces = L.geoJson(al_historic, {
             .bindPopup("<b>" + feature.properties.name + "</b><br />" + feature.properties.desc);
     }
 });
-// Make the Historic Places into a ClusterMarker layer 
+// Make the Historic Places into a ClusterMarker layer
 var historicClusterMarkers = L.markerClusterGroup({
     disableClusteringAtZoom: 16
 });
@@ -59,6 +59,11 @@ magHistoricClusterMarkers.addLayer(magHistoricPlaces);
 
 // Historic map rasters from Mapbox (make sure to load as static rasters, NOT styles!)
 var mobile1838 = L.tileLayer('https://api.mapbox.com/v4/a9696.3qd94pcr/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
+    minZoom: 10,
+    maxZoom: 21
+});
+
+var mobile1900 = L.tileLayer('https://api.mapbox.com/v4/a9696.0frs8amb/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
     minZoom: 10,
     maxZoom: 21
 });
