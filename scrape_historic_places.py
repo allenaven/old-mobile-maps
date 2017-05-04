@@ -85,7 +85,7 @@ def main():
         outfile.writelines(the_json)
 
 # Run script, as a module or otherwise
-if __name__ == main:
+if __name__ == '__main__':
     main()
 else:
     main()
