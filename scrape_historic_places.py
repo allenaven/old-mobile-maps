@@ -84,8 +84,6 @@ def main():
     with open('./al_historic.geojson', 'wt') as outfile:
         outfile.writelines(the_json)
 
-# Run script, as a module or otherwise
+# Run on command line
 if __name__ == '__main__':
-    main()
-else:
     main()
