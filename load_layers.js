@@ -58,7 +58,7 @@ magHistoricClusterMarkers.addLayer(magHistoricPlaces);
 
 
 // Historic map rasters from Mapbox (make sure to load as static rasters, NOT styles!)
-var mobile1838 = L.tileLayer('https://api.mapbox.com/v4/a9696.3qd94pcr/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
+var mobile1838 = L.tileLayer('https://api.mapbox.com/v4/a9696.co1h6zds/{z}/{x}/{y}.png128?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
     minZoom: 10,
     maxZoom: 21
 });

@@ -3,11 +3,14 @@
 """
 AA 2017
 
-Script to download a proper image from webmap Mrsid portal. You need to know
-the map ID and map pixel dimensions before you run this script. That info is
-available at the map source page.
+Script to download a proper image from a webmap Mrsid portal. Before using
+this to download a raster image, you need to know the following metadata
+available at the map's source webpage:
 
-Start off here, at the "Alabama Maps Collection":
+1. map ID, and
+2. dimensions of the map in pixels 
+
+Start here at the "Alabama Maps Collection":
 http://digital.archives.alabama.gov/cdm/landingpage/collection/maps
 
 From there, find the map you're interested in. Get the "map ID" (my term for
