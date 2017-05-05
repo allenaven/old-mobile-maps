@@ -1,20 +1,15 @@
 // A base layer from Open Street Maps to use in the magnifying glass itself
 // There is no user-facing toggle for this layer (besides the magnifying glass itself)
-var osmBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+var osmBase = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 22,
     attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
 });
 
-// The map base layer, served from Mapbox (== "Modern street map" in the key)
-// var base = L.tileLayer('https://api.mapbox.com/styles/v1/a9696/cj1vva584000i2rkx28aayjh3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYTk2OTYiLCJhIjoiY2lvaG8zdHh3MDA3Y3VobTFxYTZ2YTZzYiJ9.BboErVkpHLXjCUIKqR3xHQ', {
-// maxZoom: 20
-// })
-
-// Another base layer from Carto... maybe I like better....
-var base = new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+// Base layer from Carto
+var base = new L.TileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     maxZoom: 19,
     subdomains: 'abcd',
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
 });
 
 // National Registry of Historic Places points layer (local, load from a geojson)
