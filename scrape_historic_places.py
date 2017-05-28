@@ -17,7 +17,14 @@ def scrape_url():
     """Grabs the specified page and returns parsed BeautifulSoup object"""
     the_url = 'https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Mobile,_Alabama'
     html = requests.request('GET', the_url)
-    return BeautifulSoup(html.content, 'html.parser')
+    sp = BeautifulSoup(html.content, 'html.parser')
+
+    # Get rid of some really annoying element in the Wiki page:
+    remove_sortkeys = sp.find_all("span", "sortkey")
+    for _ in remove_sortkeys:
+        _.decompose()
+
+    return sp
 
 def place_to_dict(tablerow):
     """
@@ -67,14 +74,9 @@ def main():
     """
     soup = scrape_url()
     places = []
-    for row in soup.find_all('tr'):
-        try:
-            # Data rows are div class "vcard"
-            if row.get('class')[0] == 'vcard':
-                place = place_to_dict(row)
-                places.append(place)
-        except:
-            pass
+    for row in soup.find_all("tr", "vcard"):
+        place = place_to_dict(row)
+        places.append(place)
 
     the_json = build_geojson(places)
     the_json = 'var al_historic = ' + the_json
