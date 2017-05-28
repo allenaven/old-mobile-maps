@@ -1,6 +1,6 @@
 # Old Mobile: Historic Maps via the Web
 
-All good maps have a story to tell. This site shares one. See it at https://mobilemap.us/.
+All good maps have a story to tell. This site shares one. See it at https://www.mobilemap.us/.
 
 Mobile, Alabama is a coastal city with a rich New World history spanning French, British, Spanish, American, Confederate, and ultimately (again) American governance.
 
