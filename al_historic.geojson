@@ -295,7 +295,7 @@ var al_historic = {
             "id": 18,
             "properties": {
                 "name": "Church Street East Historic District",
-                "desc": "This downtown historic district features government, museum, commercial, and residential structures in a variety of 19th century styles. It contains 83 contributing buildings and one object. The second and third sets of boundaries represent boundary increases of 000000001984-01-13-0000January 13, 1984 and 000000002005-04-25-0000April 25, 2005 respectively.",
+                "desc": "This downtown historic district features government, museum, commercial, and residential structures in a variety of 19th century styles. It contains 83 contributing buildings and one object. The second and third sets of boundaries represent boundary increases of January 13, 1984 and April 25, 2005 respectively.",
                 "lon": -88.045556,
                 "lat": 30.687778
             },
@@ -890,7 +890,7 @@ var al_historic = {
             "id": 53,
             "properties": {
                 "name": "Lower Dauphin Street Historic District",
-                "desc": "This historic district encompasses much of Mobile's oldest intact business district. Second, third, and fourth sets of boundaries represent boundary increases of 000000001982-02-19-0000February 19, 1982, 000000001995-06-30-0000June 30, 1995, and 000000001998-08-14-0000August 14, 1998 respectively",
+                "desc": "This historic district encompasses much of Mobile's oldest intact business district. Second, third, and fourth sets of boundaries represent boundary increases of February 19, 1982, June 30, 1995, and August 14, 1998 respectively",
                 "lon": -88.046389,
                 "lat": 30.69
             },
@@ -1179,7 +1179,7 @@ var al_historic = {
             "id": 70,
             "properties": {
                 "name": "Oakleigh Garden Historic District",
-                "desc": "Centered on the Oakleigh Mansion, this historic district contains over 280 contributing buildings. Architectural styles range from Greek Revival and Italianate to Queen Anne. Second set of boundaries represent a boundary increase of 000000001991-01-30-0000January 30, 1991; a boundary decrease was listed 000000002016-12-20-0000December 20, 2016.",
+                "desc": "Centered on the Oakleigh Mansion, this historic district contains over 280 contributing buildings. Architectural styles range from Greek Revival and Italianate to Queen Anne. Second set of boundaries represent a boundary increase of January 30, 1991; a boundary decrease was listed December 20, 2016.",
                 "lon": -88.061944,
                 "lat": 30.681944
             },

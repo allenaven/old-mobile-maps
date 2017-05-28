@@ -8,7 +8,7 @@ this to download a raster image, you need to know the following metadata
 available at the map's source webpage:
 
 1. map ID, and
-2. dimensions of the map in pixels 
+2. dimensions of the map in pixels
 
 Start here at the "Alabama Maps Collection":
 http://digital.archives.alabama.gov/cdm/landingpage/collection/maps
@@ -44,6 +44,13 @@ class sidmap(object):
     """
 
     def __init__(self, mapid, map_width_px, map_height_px, **kwargs):
+        """Instantiate a sidmap object
+
+        Keyword arguments:
+        mapid -- Map unique identifier to construct the proper tile fetch URL
+        img_width_px -- Width of the image in pixels
+        img_height_px -- Height of the image in pixels
+        """
         self.mapid = str(mapid)
         self.img_width_px = map_width_px
         self.img_height_px = map_height_px
@@ -52,9 +59,7 @@ class sidmap(object):
         return f'Map id: {self.mapid}\nImage width: {str(self.img_width_px)}\nImage height: {str(self.img_height_px)}'
 
     def build_tile_descrips(self):
-        """
-        :return: List of urls to query for all tiles in the image 
-        """
+        """Return list of urls to query for all tiles in the image"""
         xrange = [i for i in range(0, self.img_width_px, 512)]
         yrange = [j for j in range(0, self.img_height_px, 512)]
 
@@ -66,12 +71,11 @@ class sidmap(object):
         return descripts
 
     def get_tile(self, tile_descrip):
-        """
-        Download the specified tile
-        :param tile_descrip:  The tile object to be downloaded, a tuple
-          specifying the url and position (upper left corner x and y
-          in absolute pixels).
-        :return: A binary object to be saved to image file
+        """Return a downloaded piece (tile) from a larger image.
+
+        Keyword argument:
+        tile_descrip -- Tuple of length 3 specifying url and position
+        (upper left corner x and y in absolute pixels) of the desired tile.
         """
         # Unpack the info from argument
         x_ul, y_ul, img_url = tile_descrip
