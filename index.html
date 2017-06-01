@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 
     <title>Historic Mobile Webmap</title>
 
@@ -15,17 +15,69 @@
     <link rel="stylesheet" href="./static/Control.FullScreen.css" />
     <link href="./static/MarkerCluster.css" rel="stylesheet" />
     <link href="./static/MarkerCluster.Default.css" rel="stylesheet" />
+    <link href="./static/leaflet-sidebar.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="./static/leaflet.js"></script>
+    <script src="./static/leaflet-sidebar.js"></script>
     <script src="./static/leaflet.magnifyingglass.js"></script>
     <script src="./static/styledLayerControl.js"></script>
     <script src="./static/easy-button.js"></script>
     <script src="./static/leaflet.markercluster.js"></script>
     <script src="./static/Control.FullScreen.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html,
+        body,
+        #map {
+            height: 100%;
+            width: 100vw;
+            font: 12pt "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="container">
+    <!--<div class="container" id="container">-->
+    <div id="sidebar" class="sidebar collapsed">
+
+        <!--Set up the sidebar nav-->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
+                <li><a href="https://github.com/" role="tab" target="_blank"><i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
+
+        <!--The sidebar tabs and content-->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    Historic Mobile Webmap
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <ul>
+                    <li><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">About the historic maps and this project</a></li>
+                    <li><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">Code, technical notes, license, attributions, bug reports</a></li>
+                </ul>
+                <p align="center"><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">&copy; 2017 Allen Aven</a> This is an ongoing project. Please share comments and feedback.</p>
+            </div>
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">Profile<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+            <div class="sidebar-pane" id="settings">
+                <h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+        </div>
+    </div>
+
+    <!--<div id="container">
 
         <h1><a href="https://allenaven.com/map/">Historic Mobile, Alabama Webmap</a></h1>
 
@@ -43,14 +95,13 @@
             </p>
             Use the magnifying glass tool to compare a modern Mobile street map with a historic map overlay on a fine scale. There have been many changes in nearly three centuries!
             </p>
-        </div>
+        </div>-->
 
-        <!--Create the map div-->
-        <div id="map"></div>
+    <!--Create the map div-->
+    <div id="map" class="sidebar-map"> </div>
 
-        <p align="center"><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">&copy; 2017 Allen Aven</a> This is an ongoing project. Please share comments and feedback.</p>
 
-    </div>
+    <!--</div>-->
 
     <!--Load the Historic placemarks from local geojson file-->
     <script src="./al_historic.geojson" type="text/javascript" charset="utf-8"></script>
@@ -94,10 +145,10 @@
             layers: [magHistoricClusterMarkers, osmBase]
         })
 
-        // Remove the magnifying glass on left click.
-        mg.on('click', function() {
-            the_map.removeLayer(mg);
-        })
+        // // Remove the magnifying glass on left click.
+        // mg.on('click', function() {
+        //     the_map.removeLayer(mg);
+        // })
 
         // Set up the Layer Control box (right side, top)
         //
@@ -128,7 +179,7 @@
             container_width: "180px",
             container_maxHeight: "550px",
             group_maxHeight: "250px",
-            group_minHeight: "100px",
+            group_minHeight: "150px",
             exclusive: false,
             collapsed: false
         };
@@ -140,6 +191,9 @@
 
         // Add a scalebar to the map
         L.control.scale().addTo(the_map);
+
+        // Add sidebar
+        var sidebar = L.control.sidebar('sidebar').addTo(map);
 
         // detect fullscreen toggling
         the_map.on('enterFullscreen', function() {
