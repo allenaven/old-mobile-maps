@@ -53,9 +53,9 @@ a {
 }
 
 #map {
-    width: 800px;
-    height: 600px;
-    border: 2px solid #ccc
+    /*width: 800px;*/
+    /*height: 600px;*/
+    /*border: 2px solid #ccc*/
 }
 
 #map:-webkit-full-screen {
