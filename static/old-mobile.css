@@ -4,15 +4,17 @@ html,
 }
 
 body {
-    margin-top: 1.0em;
+    /*margin-top: 1.0em;*/
     background-color: #fff;
-    font-family: Helvetica, Arial, FreeSans, san-serif;
+    /*font-family: Helvetica, Arial, FreeSans, san-serif;*/
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1em;
     color: #333;
 }
 
 #container {
     margin: 0 auto;
-    width: 800px;
+    /*width: 800px;*/
 }
 
 h1 {
@@ -50,12 +52,6 @@ a {
 
 .download {
     float: right;
-}
-
-#map {
-    width: 800px;
-    height: 600px;
-    border: 2px solid #ccc
 }
 
 #map:-webkit-full-screen {

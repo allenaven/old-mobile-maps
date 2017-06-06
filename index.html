@@ -1,154 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Historic Mobile Webmap</title>
-
-    <link rel="stylesheet" href="./static/old-mobile.css" />
-    <link rel="stylesheet" href="./static/leaflet.css" />
-    <link rel="stylesheet" href="./static/leaflet.magnifyingglass.css" />
-    <link rel="stylesheet" href="./static/styledLayerControl.css" />
-    <link rel="stylesheet" href="./static/easy-button.css" />
-    <link rel="stylesheet" href="./static/Control.FullScreen.css" />
-    <link href="./static/MarkerCluster.css" rel="stylesheet" />
-    <link href="./static/MarkerCluster.Default.css" rel="stylesheet" />
-
-    <script src="./static/leaflet.js"></script>
-    <script src="./static/leaflet.magnifyingglass.js"></script>
-    <script src="./static/styledLayerControl.js"></script>
-    <script src="./static/easy-button.js"></script>
-    <script src="./static/leaflet.markercluster.js"></script>
-    <script src="./static/Control.FullScreen.js"></script>
-</head>
-
-<body>
-    <div id="container">
-
-        <h1><a href="https://www.mobilemap.us/">Historic Mobile, Alabama Webmap</a></h1>
-
-        <div class="description">
-            <h3>New insights on an old city through modern Web and GIS technology</h3>
-            <p>
-                <ul>
-                    <li><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">About the historic maps and this project</a></li>
-                    <li><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">Code, technical notes, license, attributions, bug reports</a></li>
-                </ul>
-            </p>
-            <p>
-                <b>Map is intended for fullscreen interaction!</b> Use the controls at top left to toggle fullscreen, magnifying glass overlay, and zoom. Also, zoom with mouse wheel or touchscreen. Toggle historic map layers using controls at top right.
-            </p>
-            </p>
-            Use the magnifying glass tool to compare a modern Mobile street map with a historic map overlay on a fine scale. There have been many changes in nearly three centuries!
-            </p>
-        </div>
-
-        <!--Create the map div-->
-        <div id="map"></div>
-
-        <p align="center"><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">&copy; 2017 Allen Aven</a> This is an ongoing project. Please share comments and feedback.</p>
-
-    </div>
-
-    <!--Load the Historic placemarks from local geojson file-->
-    <script src="./al_historic.geojson" type="text/javascript" charset="utf-8"></script>
-
-    <!--Load the map layers-->
-    <script src="./load_layers.js"></script>
-
-    <!--Main script for Leaflet map-->
-    <script>
-        // Define the point to instantiate the map
-        var center = [30.68, -88.05];
-
-        // Instantiate the map
-        var the_map = L.map('map', {
-            center: center,
-            zoom: 14,
-            maxZoom: 20,
-            layers: [historicClusterMarkers, base],
-            fullscreenControl: true,
-            fullscreenControlOptions: {
-                position: 'topleft'
-            }
-        });
-
-        // Set up the magnifying glass:
-        //
-        // Add "easy button" that toggles the magnifying glass, will show up
-        //   on the left under the zoom/fullscreen controls
-        L.easyButton('<span class="glass" style="font-size: 3em">&telrec;</span>', function() {
-            if (the_map.hasLayer(mg)) {
-                the_map.removeLayer(mg);
-            } else {
-                mg.addTo(the_map);
-            }
-        }).addTo(the_map);
-
-        // Create the magnifying glass layer
-        var mg = L.magnifyingGlass({
-            zoomOffset: 0,
-            radius: 180,
-            layers: [magHistoricClusterMarkers, osmBase]
-        })
-
-        // Remove the magnifying glass on left click.
-        mg.on('click', function() {
-            the_map.removeLayer(mg);
-        })
-
-        // Set up the Layer Control box (right side, top)
-        //
-        // Create a container with the historic layers
-        //   for the StyledLayerControl plugin
-        var historicMapList = [{
-            groupName: "Historic Maps",
-            expanded: true,
-            layers: {
-                "Mobile 1838": mobile1838,
-                "Mobile 1900": mobile1900,
-                "Nat'l Registry of Historic Places (within city)": historicClusterMarkers
-            }
-        }];
-
-        // Create a container with the modern-day map layers (i.e., street map)
-        //   to pass to the layerControl
-        var baseMapList = [{
-            groupName: "Modern Maps",
-            expanded: true,
-            layers: {
-                "Modern street map": base
-            }
-        }];
-
-        // Set the StyledLayerControl aesthetic options
-        var layerControlOptions = {
-            container_width: "180px",
-            container_maxHeight: "550px",
-            group_maxHeight: "250px",
-            group_minHeight: "100px",
-            exclusive: false,
-            collapsed: false
-        };
-
-        // Add StyledLayerControl object to map
-        var layerControl = L.Control.styledLayerControl(
-            baseMapList, historicMapList, layerControlOptions);
-        the_map.addControl(layerControl);
-
-        // Add a scalebar to the map
-        L.control.scale().addTo(the_map);
-
-        // detect fullscreen toggling
-        the_map.on('enterFullscreen', function() {
-            if (window.console) window.console.log('enterFullscreen');
-        });
-        the_map.on('exitFullscreen', function() {
-            if (window.console) window.console.log('exitFullscreen');
-        });
-    </script>
-</body>
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+
+    <title>Historic Mobile Webmap</title>
+
+    <link rel="stylesheet" href="./static/old-mobile.css" />
+    <link rel="stylesheet" href="./static/leaflet.css" />
+    <link rel="stylesheet" href="./static/leaflet.magnifyingglass.css" />
+    <link rel="stylesheet" href="./static/styledLayerControl.css" />
+    <link rel="stylesheet" href="./static/easy-button.css" />
+    <link rel="stylesheet" href="./static/Control.FullScreen.css" />
+    <link href="./static/MarkerCluster.css" rel="stylesheet" />
+    <link href="./static/MarkerCluster.Default.css" rel="stylesheet" />
+    <link href="./static/leaflet-sidebar.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="./static/leaflet.js"></script>
+    <script src="./static/leaflet-sidebar.js"></script>
+    <script src="./static/leaflet.magnifyingglass.js"></script>
+    <script src="./static/styledLayerControl.js"></script>
+    <script src="./static/easy-button.js"></script>
+    <script src="./static/leaflet.markercluster.js"></script>
+    <script src="./static/Control.FullScreen.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html,
+        body,
+        #map {
+            height: 100%;
+            width: 100vw;
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!--<div class="container" id="container">-->
+    <div id="sidebar" class="sidebar collapsed">
+
+        <!--Set up the sidebar nav-->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#about" role="tab"><i class="fa fa-info-circle"></i></a></li>
+                <li><a href="#sources" role="tab"><i class="fa fa-book"></i></a></li>
+            </ul>
+        </div>
+
+        <!--The sidebar tabs and content-->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    Historic Mobile Webmap
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <p class="description" align="center">
+                    This interactive map shows current Mobile, Alabama with visual context from other eras in the city's history.
+                </p>
+                <h3>
+                    Using the interactive map:
+                </h3>
+                <ul>
+                    <li><b>Zoom in and out</b> with the mouse scroll wheel or the +/- buttons at top left</li>
+                    <li><b>Toggle historic map overlays</b> using the checkboxes in the menu at top right</li>
+                    <li>Use "magnifying glass" tool to <b>simultaneously display modern and historic maps</b>, when a historic map layer is turned on (via checkbox). Toggle using the magnifying glass button at top left.</li>
+                    <ul>
+                        <li>This feature does not work on mobile yet</li>
+                        <li>There is no actual magnification, only a window effect</li>
+                    </ul>
+                    <li><b>Be patient!</b> Historic maps are data-heavy and may not load quickly, especially on mobile or slower internet connections.
+                    </li>
+                </ul>
+                <a href="https://github.com/allenaven/old-mobile-maps" target="_blank">Code, technical notes, license, attributions, bug reports</a>
+                <hr>
+                <p align="center"><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">&copy; 2017 Allen Aven <i class="fa fa-github"></i></a><br> This is an ongoing project. Please share comments and feedback.</p>
+            </div>
+
+            <div class="sidebar-pane" id="about">
+                <h1 class="sidebar-header">
+                    Historic Mobile Webmap
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <h3>
+                    Map History
+                </h3>
+                <p>
+                    Mobile, Alabama is a coastal city with a <a href="https://en.wikipedia.org/wiki/History_of_Mobile,_Alabama" target="_blank">rich New World history</a> spanning French, British, Spanish, American, Confederate secession, and ultimately
+                    (again) American governance.
+                </p>
+                <p>
+                    Throughout Mobile's history, the various ruling governments documented their territory in drawings and maps. From early French colonial settlers in the 1700, through American Civil War in the 1860s, to 20th century U.S. Geological Survey topo maps, cartographers
+                    traced the city's evolution from frontier fort to modern port city. Many of those maps are preserved digitally in very high quality, available from the U.S. Library of Congress and other sources.
+                </p>
+                <p>
+                    This interactive map shows current Mobile, Alabama with visual context from other eras in the city's rich history, using modern Web technology to juxtapose new and old cartography products.
+                </p>
+                <hr>
+                <p align="center"><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">&copy; 2017 Allen Aven <i class="fa fa-github"></i></a><br> This is an ongoing project. Please share comments and feedback.</p>
+            </div>
+
+            <div class="sidebar-pane" id="sources">
+                <h1 class="sidebar-header">
+                    Historic Mobile Webmap
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <p>
+                    <h3>Map Sources</h3>
+                    <ul>
+                        <li><a href="http://digital.archives.alabama.gov/cdm/ref/collection/maps/id/683" target="_blank">Mobile 1838</a></li>
+                        <li><a href="http://digital.archives.alabama.gov/cdm/ref/collection/maps/id/692" target="_blank">Mobile 1900</a></li>
+                        <li>Many more digital maps that I have not yet added</li>
+                    </ul>
+                </p>
+                <hr>
+                <p align="center"><a href="https://github.com/allenaven/old-mobile-maps" target="_blank">&copy; 2017 Allen Aven <i class="fa fa-github"></i></a><br> This is an ongoing project. Please share comments and feedback.</p>
+            </div>
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">Profile<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+            <div class="sidebar-pane" id="settings">
+                <h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+        </div>
+    </div>
+
+    <!--Create the map div-->
+    <div id="map" class="sidebar-map"> </div>
+
+
+    <!--</div>-->
+
+    <!--Load the Historic placemarks from local geojson file-->
+    <script src="./al_historic.geojson" type="text/javascript" charset="utf-8"></script>
+
+    <!--Load the map layers-->
+    <script src="./load_layers.js"></script>
+
+    <!--Main script for Leaflet map-->
+    <script>
+        // Define the point to instantiate the map
+        var center = [30.68, -88.05];
+
+        // Instantiate the map
+        var the_map = L.map('map', {
+            center: center,
+            zoom: 14,
+            maxZoom: 20,
+            layers: [historicClusterMarkers, base],
+            fullscreenControl: true,
+            fullscreenControlOptions: {
+                position: 'topleft'
+            }
+        });
+
+        // Set up the magnifying glass:
+        //
+        // Add "easy button" that toggles the magnifying glass, will show up
+        //   on the left under the zoom/fullscreen controls
+        L.easyButton('<span class="glass" style="font-size: 3em">&telrec;</span>', function() {
+            if (the_map.hasLayer(mg)) {
+                the_map.removeLayer(mg);
+            } else {
+                mg.addTo(the_map);
+            }
+        }).addTo(the_map);
+
+        // Create the magnifying glass layer
+        var mg = L.magnifyingGlass({
+            zoomOffset: 0,
+            radius: 180,
+            layers: [magHistoricClusterMarkers, osmBase]
+        })
+
+        // // Remove the magnifying glass on left click.
+        // mg.on('click', function() {
+        //     the_map.removeLayer(mg);
+        // })
+
+        // Set up the Layer Control box (right side, top)
+        //
+        // Create a container with the historic layers
+        //   for the StyledLayerControl plugin
+        var historicMapList = [{
+            groupName: "Historic Maps",
+            expanded: true,
+            layers: {
+                "Mobile 1838": mobile1838,
+                "Mobile 1900": mobile1900,
+                "Nat'l Registry of Historic Places (in city)": historicClusterMarkers
+            }
+        }];
+
+        // Create a container with the modern-day map layers (i.e., street map)
+        //   to pass to the layerControl
+        var baseMapList = [{
+            groupName: "Modern Maps",
+            expanded: true,
+            layers: {
+                "Modern street map": base
+            }
+        }];
+
+        // Set the StyledLayerControl aesthetic options
+        var layerControlOptions = {
+            container_width: "200px",
+            container_maxHeight: "550px",
+            group_maxHeight: "250px",
+            group_minHeight: "250px",
+            exclusive: false,
+            collapsed: false
+        };
+
+        // Add StyledLayerControl object to map
+        var layerControl = L.Control.styledLayerControl(
+            baseMapList, historicMapList, layerControlOptions);
+        the_map.addControl(layerControl);
+
+        // Add a scalebar to the map
+        L.control.scale().addTo(the_map);
+
+        // Add sidebar
+        var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+        // detect fullscreen toggling
+        the_map.on('enterFullscreen', function() {
+            if (window.console) window.console.log('enterFullscreen');
+        });
+        the_map.on('exitFullscreen', function() {
+            if (window.console) window.console.log('exitFullscreen');
+        });
+    </script>
+</body>
+
 </html>
