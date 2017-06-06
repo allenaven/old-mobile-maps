@@ -37,7 +37,7 @@
         #map {
             height: 100%;
             width: 100vw;
-            font: 1.05em "Helvetica Neue", Arial, Helvetica, sans-serif;
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
@@ -73,8 +73,8 @@
                     <li><b>Toggle historic map overlays</b> using the checkboxes in the menu at top right</li>
                     <li>Use "magnifying glass" tool to <b>simultaneously display modern and historic maps</b>, when a historic map layer is turned on (via checkbox). Toggle using the magnifying glass button at top left.</li>
                     <ul>
-                        <li>This feature does not work on mobile.</li>
-                        <li>There is no actual magnification, only a window effect.</li>
+                        <li>This feature does not work on mobile yet</li>
+                        <li>There is no actual magnification, only a window effect</li>
                     </ul>
                     <li><b>Be patient!</b> Historic maps are data-heavy and may not load quickly, especially on mobile or slower internet connections.
                     </li>
@@ -196,7 +196,7 @@
             layers: {
                 "Mobile 1838": mobile1838,
                 "Mobile 1900": mobile1900,
-                "Nat'l Registry of Historic Places (within city)": historicClusterMarkers
+                "Nat'l Registry of Historic Places (in city)": historicClusterMarkers
             }
         }];
 
@@ -212,10 +212,10 @@
 
         // Set the StyledLayerControl aesthetic options
         var layerControlOptions = {
-            container_width: "180px",
+            container_width: "200px",
             container_maxHeight: "550px",
             group_maxHeight: "250px",
-            group_minHeight: "150px",
+            group_minHeight: "250px",
             exclusive: false,
             collapsed: false
         };
