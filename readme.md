@@ -2,8 +2,7 @@
 
 All good maps have a story to tell. This site shares one. See it at https://www.mobilemap.us/.
 
-Mobile, Alabama is a coastal city with a rich New World history spanning French, British, Spanish, American, Confederate, and ultimately (again) American governance.
-
+Mobile, Alabama is a coastal city with a rich New World history spanning French, British, Spanish, American, Confederate, and ultimately (again) American governance. This interactive map shows current Mobile, Alabama with visual context from other eras in the city's history, using modern Web technology to juxtapose new and old cartography products.
 <!-- TOC depthFrom:2 -->
 
 - [Historic map notes](#historic-map-notes)
