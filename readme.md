@@ -50,6 +50,7 @@ This project would not exist without the talented developers in the FOSS geospat
 - [Leaflet.fullscreen](http://brunob.github.io/leaflet.fullscreen/), Copyright (c) 2013, Bruno Bergot, [MIT License](https://github.com/brunob/leaflet.fullscreen/blob/master/LICENSE)
 - [Leaflet.StyledLayerControl](https://github.com/davicustodio/Leaflet.StyledLayerControl) ([CC Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/deed.en_US))
 - [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster), Copyright 2012 David Leaver, [MIT License](https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt)
+- [sidebar-v2](https://github.com/Turbo87/sidebar-v2), Copyright (c) 2013 Tobias Bieniek, [MIT License](https://github.com/Turbo87/sidebar-v2/blob/master/LICENSE)
 
 ## Map hosting providers
 
